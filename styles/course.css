@@ -10,15 +10,19 @@
 }
 
 * {
-    /* margin-bottom: auto; */
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
 }
 
+main {
+    display: block;
+}
+
 body {
     background-color: var(--back_color2);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 /* padding: 0px keeps nav-bar at bottom of header */
@@ -26,14 +30,11 @@ body {
 /* mobile ********************* */
 header {
     background-color: #bbb;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 header,
-main {
+body {
     margin: 0 auto;
 }
 
@@ -88,9 +89,9 @@ button {
     margin-left: 1rem;
 }
 
-/* section {
-    display: grid;
-} */
+section {
+    border: 4px solid greenyellow;
+}
 
 /*-------------------------------------------------*/
 /* ID Selectors                                    */
@@ -185,7 +186,7 @@ button {
     border-radius: 10px;
     border: 2px solid #0D1B2A;
     margin: 0.5rem auto;
-    grid-column: span;
+    grid-column: 1 / 3;
     height: auto;  
 }
 

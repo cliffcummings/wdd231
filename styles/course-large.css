@@ -5,6 +5,11 @@
         flex: 1 1 100%;
 	}
 
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
     header {
         padding: 0px;
         background-color: var(--back_color2);
