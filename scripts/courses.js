@@ -78,28 +78,75 @@ const courses = [
     }
 ]
 
-//----------------------------------------------------------------------------
-function mobileAdjust() {
-    // Get width and height of the window excluding scrollbars
-    let w = Number(document.documentElement.clientWidth);
-    // console.log(`w = ${w}`);
+// Call the createCoursesCard() function (defined below)
+createCoursesCard(courses);
 
-    if (w > 700) {
-        document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
-                                             alt="Cliff Cummings photograph" height="480" align="left">`;
-        // console.log("Large size!");
-    } else {
-        document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
-        alt="Cliff Cummings photograph" height="240" align="left">`;
-        // document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_187_240.png" 
-        //                                      alt="Cliff Cummings photograph" height="240" align="left">`;
-        // console.log("Small size!");
-    };
+const alllink = document.querySelector("#all");
+const cselink = document.querySelector("#cse");
+const wddlink = document.querySelector("#wdd");
+
+// Anonymous () function definitions
+// All button - get all courses
+alllink.addEventListener('click', () => {
+	let allcourses = courses;
+	createCoursesCard(allcourses);
+    console.log(allcourses);
+})
+
+cselink.addEventListener('click', () => {
+	let csecourses = courses.filter(courses => courses.subject.includes("CSE"));
+	createCoursesCard(csecourses);
+    console.log(csecourses);
+})
+
+wddlink.addEventListener('click', () => {
+	let wddcourses = courses.filter(courses => courses.subject.includes("WDD"));
+	createCoursesCard(wddcourses);
+    console.log(wddcourses);
+})
+
+function createCoursesCard(filteredcourses) {
+	// clear out last selected list of courses
+	document.querySelector(".container").innerHTML="";
+
+	// Foreach Subject in the courses Array, do the following
+	filteredcourses.forEach(course => {
+		let card       = document.createElement("div");
+		card.classList.add("card");
+		// Above - add class="card" to the above <div class="card">
+
+		let location = document.createElement("p");
+
+		location.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;
+
+		card.appendChild(location);
+
+		document.querySelector(".container").appendChild(card);
+	})
 }
 
-// Attaching the event listener function to window's resize event
-window.addEventListener("resize", mobileAdjust);
+//----------------------------------------------------------------------------
+// function mobileAdjust() {
+//     // Get width and height of the window excluding scrollbars
+//     let w = Number(document.documentElement.clientWidth);
+//     // console.log(`w = ${w}`);
 
-// Calling the function for the first time
-mobileAdjust();
+//     if (w > 700) {
+//         document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
+//                                              alt="Cliff Cummings photograph" height="480" align="left">`;
+//         // console.log("Large size!");
+//     } else {
+//         document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
+//         alt="Cliff Cummings photograph" height="240" align="left">`;
+//         // document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_187_240.png" 
+//         //                                      alt="Cliff Cummings photograph" height="240" align="left">`;
+//         // console.log("Small size!");
+//     };
+// }
+
+// // Attaching the event listener function to window's resize event
+// window.addEventListener("resize", mobileAdjust);
+
+// // Calling the function for the first time
+// mobileAdjust();
 //----------------------------------------------------------------------------
