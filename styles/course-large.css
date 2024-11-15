@@ -5,12 +5,6 @@
         flex: 1 1 100%;
 	}
 
-    main {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        /* grid-template-rows: 2fr 1fr; */
-    }
-
     header {
         padding: 0px;
         background-color: var(--back_color2);
@@ -27,6 +21,14 @@
     h2 {
         font-size: 2rem;
         text-align: center;
+    }
+
+    #grid-container {
+        display: grid;
+        column-gap: 0.5rem;
+        width: 100%;
+        margin: 0.5rem auto;
+        grid-template-columns: 2fr 1fr;
     }
 
      /* hide hamburger button */

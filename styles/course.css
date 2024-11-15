@@ -13,13 +13,14 @@
     box-sizing: border-box;
     font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
 }
+
 /* 
 main {
     display: block;
 } */
 
 body {
-    background-color: var(--back_color2);
+    /* background-color: var(--back_color2); */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -36,7 +37,7 @@ header {
 header,
 body {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 footer {
@@ -50,14 +51,19 @@ footer {
 h1 {
     font-size: 1.5rem;
     text-align: left;
-    margin-left: 1rem;
+    margin-right: 2rem;
 }
 
 h2 {
     color: var(--accent_color3);
+    background-color: var(--back_color2);
     font-size: 1.2rem;
-    text-align: left;
-    margin: 1rem;
+    border-radius: 10px;
+    border-bottom-left-radius: 0 0;
+    border-bottom-right-radius: 0 0;
+    margin: 0.5rem auto;
+    height: auto;
+    width: 100%;
 }
 
 h3 {
@@ -71,16 +77,13 @@ h3 {
 nav {
     max-width: 100%;
     margin: 1rem auto;
-    background-color: #36454f;
+    background-color: blue;
 }
 
 nav a:hover {
-	text-decoration:underline;
+    text-decoration: underline;
 }
 
-.active {
-	color: yellow;
-}
 
 img {
     margin-right: 1rem;
@@ -90,30 +93,36 @@ button {
     margin-left: 1rem;
 }
 
-section {
-    border: 4px solid greenyellow;
+ul li {
+    color: var(--back_color2);
 }
 
 /*-------------------------------------------------*/
 /* ID Selectors                                    */
 /*-------------------------------------------------*/
 
+#grid-container {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
 #menu {
-	font-size: 1.5rem;
-	border: 0;
-	background: none;
-	color: #000;
-	position: absolute;
-	top: 0.5rem;
-	right: 0.5rem;
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: absolute;
+    top: 2rem;
+    right: 0.5rem;
 }
 
 #menu::before {
-	content: "☰";
+    content: "☰";
 }
 
 #menu.open::before {
-	content: "❎";
+    content: "❎";
 }
 
 /*-------------------------------------------------*/
@@ -123,32 +132,33 @@ section {
 .navigation {
     display: flex;
     flex-direction: column;
-	list-style: none;
-	background-color: #333;
-	color: #fff;
+    list-style: none;
+    background-color: #333;
+    color: #fff;
 }
 
 .navigation a {
-	display: none;
-	padding: 1rem;
-	text-align: center;
-	text-decoration: none;
-	color: #fff;
+    display: none;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
 }
 
 .navigation a:hover {
-	background-color: #bbb;
-	color: #333;
-	font-weight: 700;
+    background-color: #bbb;
+    color: #333;
+    font-weight: 700;
 }
 
 /* when the button is clicked - the open class is toggled (added/removed) */
 .open a {
-	display: block;
+    display: block;
 }
 
-.active::before { 
-	content: "📍";  /* just a wayfinding symbol for the user */
+.active::before {
+    content: "📍";
+    /* just a wayfinding symbol for the user */
 }
 
 .head {
@@ -158,56 +168,46 @@ section {
     max-width: 100%;
 }
 
-#grid-container {
-    display: grid;
-    /* grid-gap: 10px;
-    width: 1000px; */
+.headtag {
+    margin-left: 20rem;
+}
+
+section {
+    border-radius: 10px;
+    border: 2px solid var(--back_color1);
+    margin: 0.5rem auto;
+    height: auto;
     width: 100%;
-    margin: 0 auto;
-    grid-template-columns: 2fr 1fr;
 }
 
 .rounded-box1 {
-    border-radius: 10px;
-    border: 2px solid yellow;
-    margin: 0.5rem auto;
     grid-column: 1 / 2;
-    height: auto;  
-    width: 100%;
 }
 
 .rounded-box2 {
-    border-radius: 10px;
-    border: 2px solid red;
-    margin: 0.5rem auto;
     grid-column: 2 / 3;
-    height: auto;
-    width: 100%;
-
 }
 
 .rounded-box3 {
-    border-radius: 10px;
-    border: 2px solid #0D1B2A;
-    margin: .5rem auto;
     grid-column: 1 / 3;
-    height: auto;  
-    width: 100%;
 }
 
 .content1 {
-	margin: 7px;
-	border: 5px solid rgba(0, 0, 0, 0.1);
-	background-color: rosybrown;
-	height: 50vh;
+    margin: 7px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    background-color: rosybrown;
+    height: 50vh;
 }
 
 .stuff {
-	margin: 1px 3px 5px 7px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	background-color: #bed;
-	max-width: 580px;
-	height: 50vh;
+    padding: 1px;
+    border: 1px solid green;
+    max-width: 580px;
+    height: 50vh;
+}
+
+.active {
+    color: yellow;
 }
 
 /*-------------------------------------------------*/
@@ -229,6 +229,7 @@ h2 {
 h3 {
     color: blue;
 } */
+
 /*-------------------------------------------------*/
 /* END DEBUG ************************************* */
 /*-------------------------------------------------*/
