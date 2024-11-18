@@ -14,11 +14,6 @@
     font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
 }
 
-/* 
-main {
-    display: block;
-} */
-
 body {
     /* background-color: var(--back_color2); */
     display: flex;
@@ -90,6 +85,7 @@ figure {
 
 figure img {
     display: block;
+    text-align: center;
     margin: auto;
 }
 
@@ -148,6 +144,12 @@ p.notdone {
 
 #menu.open::before {
     content: "❎";
+}
+
+#course-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: center;
 }
 
 /*-------------------------------------------------*/
@@ -254,6 +256,10 @@ section {
     margin: 7px;
     border: 5px solid rgba(0, 0, 0, 0.1);
     background-color: rosybrown;
+}
+
+.courses {
+    padding-left: 2rem;;
 }
 
 .stuff {

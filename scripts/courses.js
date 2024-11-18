@@ -82,6 +82,8 @@ const doc = document;
 
 console.log("DEBUG #1");
 
+displayCourseWork(courses);
+
 // Call the createCoursesCard() function (defined below)
 createCoursesCard(courses);
 
@@ -122,8 +124,47 @@ wddlink.addEventListener('click', () => {
 
 console.log("DEBUG #4");
 
-function createCoursesCard(filteredcourses) {
+function displayCourseWork(courses) {
     console.clear();
+	// clear out last selected list of courses
+    let creditTotal = 0;
+
+	doc.querySelector("#course-container").innerHTML="";
+
+    let info = doc.createElement("div");
+    info.classList.add("course-container");
+
+    courses.forEach(course => {
+        creditTotal += course.credits;
+
+        let classtitle = `${course.subject} ${course.number} - ${course.title}`;
+        let classcredits = course.credits;
+        console.log(`${classtitle} with ${classcredits} credits: total ${creditTotal}`);
+
+        let infoText = doc.createElement("p");
+        infoText.classList.add("courses");
+        infoText.innerHTML = `${classtitle}`;
+        
+        let creditText = doc.createElement("p");
+        creditText.innerHTML = `${classcredits} credits`;
+
+        doc.querySelector("#course-container").appendChild(infoText);
+        doc.querySelector("#course-container").appendChild(creditText);
+    })
+    
+    let infoText = doc.createElement("p");
+    infoText.classList.add("courses");
+    infoText.innerHTML = `Total Credits`;
+    
+    let creditText = doc.createElement("p");
+    creditText.innerHTML = `${creditTotal} credits`;
+    
+    doc.querySelector("#course-container").appendChild(infoText);
+    doc.querySelector("#course-container").appendChild(creditText);
+}
+
+function createCoursesCard(filteredcourses) {
+    // console.clear();
     console.log(`DEBUG filtered courses ${JSON.stringify(filteredcourses,null,'\t')}`);
     console.log(filteredcourses);
 
