@@ -5,8 +5,10 @@
     --accent_color1: #7FC6DE;
     --accent_color2: #DFDFDF;
     --accent_color3: #EFEFEF;
+    --accent_color4: #912A2A;
     --wild_red: #FF0000;
     --sunburst_red: #CC0000;
+    --active_yellow: #FFFF00;
 }
 
 * {
@@ -15,7 +17,6 @@
 }
 
 body {
-    /* background-color: var(--back_color2); */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -25,7 +26,7 @@ body {
 /* text-align nav button text to center */
 /* mobile ********************* */
 header {
-    background-color: #bbb;
+    background-color: var(--back_color2);
     width: 100%;
 }
 
@@ -38,7 +39,7 @@ body {
 footer {
     padding: 1rem;
     margin-bottom: 3rem;
-    color: white;
+    color: var(--accent_color3);
     background-color: var(--back_color1);
     text-align: center;
 }
@@ -72,7 +73,6 @@ h3 {
 nav {
     max-width: 100%;
     margin: 1rem auto;
-    background-color: blue;
 }
 
 nav a:hover {
@@ -107,14 +107,14 @@ ul li {
 }
 
 p.done {
-    background-color: brown;
+    background-color: var(--accent_color4);
     color: white;
     padding: 5%;
 }
 
 p.notdone {
-    background-color: lightgray;
-    color: black;
+    background-color: var(--accent_color2);
+    color: var(--back_color1);
     padding: 5%
 }
 
@@ -132,7 +132,7 @@ p.notdone {
     font-size: 1.5rem;
     border: 0;
     background: none;
-    color: #000;
+    color: var(--back_color1);
     position: absolute;
     top: 2rem;
     right: 0.5rem;
@@ -158,7 +158,7 @@ p.notdone {
 
 .container {
     box-sizing: border-box;
-    border: solid lightgray 1px;
+    border: solid var(--accent_color2) 1px;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 5px;
@@ -169,7 +169,7 @@ p.notdone {
     display: flex;
     flex-direction: column;
     list-style: none;
-    background-color: #333;
+    background-color: var(--back_color2);
     color: #fff;
 }
 
@@ -178,12 +178,12 @@ p.notdone {
     padding: 1rem;
     text-align: center;
     text-decoration: none;
-    color: #fff;
+    color: var(--accent_color3);
 }
 
 .navigation a:hover {
-    background-color: #bbb;
-    color: #333;
+    background-color: var(--accent_color2);
+    color: var(--back_color1);
     font-weight: 700;
 }
 
@@ -192,7 +192,7 @@ p.notdone {
     flex-direction: row;
     justify-content: center;
     list-style: none;
-    background-color: white;
+    background-color: var(--accent_color3);
     margin: 1rem;
 }
 
@@ -202,13 +202,13 @@ p.notdone {
     margin: 0.5rem;
     text-align: center;
     text-decoration: none;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--back_color1);
+    color: var(--accent_color3);
 }
 
 .selector a:hover {
-    background-color: #bbb;
-    color: #333;
+    background-color: var(--accent_color2);
+    color: var(--back_color1);
     font-weight: 700;
 }
 /* when the button is clicked - the open class is toggled (added/removed) */
@@ -254,22 +254,16 @@ section {
 
 .content1 {
     margin: 7px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    background-color: rosybrown;
+    border: 5px solid var(--accent_color2);
+    background-color: var(--accent_color3);
 }
 
 .courses {
     padding-left: 2rem;;
 }
 
-.stuff {
-    padding: 1px;
-    border: 1px solid green;
-    max-width: 580px;
-}
-
 .active {
-    color: yellow;
+    color: var(--active_yellow);
 }
 
 /*-------------------------------------------------*/
