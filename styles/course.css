@@ -171,7 +171,7 @@ p.notdone {
     display: flex;
     flex-direction: column;
     list-style: none;
-    background-color: var(--back_color2);
+    background-color: var(--back_color1);
     color: #fff;
 }
 
