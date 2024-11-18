@@ -195,7 +195,7 @@ function createCoursesCard(filteredcourses) {
 
         console.log("DEBUG #6");
 		// coursename.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;
-        let courseNameStr = `${course.subject}${course.number} is ${done}`
+        let courseNameStr = `${course.subject}${course.number}`
         console.log(courseNameStr);
 		coursename.innerHTML   = courseNameStr;
 
