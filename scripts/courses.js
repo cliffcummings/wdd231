@@ -78,67 +78,98 @@ const courses = [
     }
 ]
 
-// Call the createCoursesCard() function (defined below)
-createCoursesCard(courses);
+const doc = document;
 
-const alllink = document.querySelector("#all");
-const cselink = document.querySelector("#cse");
-const wddlink = document.querySelector("#wdd");
+console.log("DEBUG #1");
+
+// Call the createCoursesCard() function (defined below)
+// createCoursesCard(courses);
+
+const alllink = doc.querySelector("#all");
+const cselink = doc.querySelector("#cse");
+const wddlink = doc.querySelector("#wdd");
 
 // Anonymous () function definitions
 // All button - get all courses
 alllink.addEventListener('click', () => {
+    console.clear();
+    console.log("Clicked All");
 	let allcourses = courses;
-	createCoursesCard(allcourses);
     console.log(allcourses);
+	createCoursesCard(allcourses);
 })
+
+console.log("DEBUG #2");
 
 cselink.addEventListener('click', () => {
-	let csecourses = courses.filter(courses => courses.subject.includes("CSE"));
-	createCoursesCard(csecourses);
+    console.clear();
+    console.log("Clicked CSE");
+	let csecourses = courses.filter(courses => courses.subject.includes('CSE'));
     console.log(csecourses);
+    console.log();
+	createCoursesCard(csecourses);
 })
+
+console.log("DEBUG #3");
 
 wddlink.addEventListener('click', () => {
+    console.clear();
+    console.log("Clicked WDD");
 	let wddcourses = courses.filter(courses => courses.subject.includes("WDD"));
-	createCoursesCard(wddcourses);
     console.log(wddcourses);
+	createCoursesCard(wddcourses);
 })
 
+console.log("DEBUG #4");
+
 function createCoursesCard(filteredcourses) {
+    // console.clear();
+    // console.log(`DEBUG ${JSON.stringify(filteredcourses)}`);
+    console.log(filteredcourses);
 	// clear out last selected list of courses
-	document.querySelector(".container").innerHTML="";
+	doc.querySelector(".container").innerHTML="";
 
 	// Foreach Subject in the courses Array, do the following
 	filteredcourses.forEach(course => {
-		let card       = document.createElement("div");
+		let card       = doc.createElement("div");
 		card.classList.add("card");
 		// Above - add class="card" to the above <div class="card">
+        
+        console.log("DEBUG #5");
+		let coursename = doc.createElement("p");
 
-		let location = document.createElement("p");
+        console.log("DEBUG #6");
+		// coursename.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;
+        let courseNameStr = `${course.subject}${course.number}`
+        console.log(courseNameStr);
+		coursename.innerHTML   = `${course.subject}${course.number}`;
 
-		location.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;
+        console.log("DEBUG #7");
+        card.appendChild(coursename);
+        console.log(coursename);
 
-		card.appendChild(location);
+        console.log(card);
+        console.log("DEBUG #8");
+        doc.querySelector(".container").appendChild(coursename);
 
-		document.querySelector(".container").appendChild(card);
+        console.log("DEBUG #9");
 	})
 }
 
 //----------------------------------------------------------------------------
 // function mobileAdjust() {
 //     // Get width and height of the window excluding scrollbars
-//     let w = Number(document.documentElement.clientWidth);
+//     let w = Number(doc.documentElement.clientWidth);
 //     // console.log(`w = ${w}`);
 
 //     if (w > 700) {
-//         document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
+//         doc.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
 //                                              alt="Cliff Cummings photograph" height="480" align="left">`;
 //         // console.log("Large size!");
 //     } else {
-//         document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
+//         doc.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png" 
 //         alt="Cliff Cummings photograph" height="240" align="left">`;
-//         // document.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_187_240.png" 
+//         // doc.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_187_240.png" 
 //         //                                      alt="Cliff Cummings photograph" height="240" align="left">`;
 //         // console.log("Small size!");
 //     };

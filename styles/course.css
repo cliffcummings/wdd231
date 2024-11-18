@@ -128,6 +128,12 @@ ul li {
 /*-------------------------------------------------*/
 /* Class Selectors                                 */
 /*-------------------------------------------------*/
+.container {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 50px;
+    place-items: center;
+}
 
 .navigation {
     display: flex;
@@ -196,14 +202,12 @@ section {
     margin: 7px;
     border: 5px solid rgba(0, 0, 0, 0.1);
     background-color: rosybrown;
-    height: 50vh;
 }
 
 .stuff {
     padding: 1px;
     border: 1px solid green;
     max-width: 580px;
-    height: 50vh;
 }
 
 .active {
