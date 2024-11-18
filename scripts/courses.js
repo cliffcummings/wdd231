@@ -83,7 +83,7 @@ const doc = document;
 console.log("DEBUG #1");
 
 // Call the createCoursesCard() function (defined below)
-// createCoursesCard(courses);
+createCoursesCard(courses);
 
 const alllink = doc.querySelector("#all");
 const cselink = doc.querySelector("#cse");
