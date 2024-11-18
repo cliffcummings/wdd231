@@ -157,6 +157,29 @@ ul li {
     font-weight: 700;
 }
 
+.selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.selector a {
+    display: block;
+    flex: 1 1 1;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.selector a:hover {
+    background-color: #bbb;
+    color: #333;
+    font-weight: 700;
+}
 /* when the button is clicked - the open class is toggled (added/removed) */
 .open a {
     display: block;

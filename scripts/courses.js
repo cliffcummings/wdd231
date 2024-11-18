@@ -123,14 +123,22 @@ wddlink.addEventListener('click', () => {
 console.log("DEBUG #4");
 
 function createCoursesCard(filteredcourses) {
-    // console.clear();
-    // console.log(`DEBUG ${JSON.stringify(filteredcourses)}`);
+    console.clear();
+    console.log(`DEBUG filtered courses ${JSON.stringify(filteredcourses,null,'\t')}`);
     console.log(filteredcourses);
+
 	// clear out last selected list of courses
 	doc.querySelector(".container").innerHTML="";
 
+    // filter(filteredcourses => filteredcourses.completed.includes("true"));
+
 	// Foreach Subject in the courses Array, do the following
 	filteredcourses.forEach(course => {
+
+        // Has the course been completed?
+        let done = course.completed;
+        console.log(done);
+
 		let card       = doc.createElement("div");
 		card.classList.add("card");
 		// Above - add class="card" to the above <div class="card">
@@ -140,9 +148,9 @@ function createCoursesCard(filteredcourses) {
 
         console.log("DEBUG #6");
 		// coursename.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;
-        let courseNameStr = `${course.subject}${course.number}`
+        let courseNameStr = `${course.subject}${course.number} is ${done}`
         console.log(courseNameStr);
-		coursename.innerHTML   = `${course.subject}${course.number}`;
+		coursename.innerHTML   = courseNameStr;
 
         console.log("DEBUG #7");
         card.appendChild(coursename);
