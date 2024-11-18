@@ -97,6 +97,13 @@ ul li {
     color: var(--back_color2);
 }
 
+p {
+    background-color: red;
+    color: white;
+    padding: 10% 10%;
+    border-radius: 20%;
+}
+
 /*-------------------------------------------------*/
 /* ID Selectors                                    */
 /*-------------------------------------------------*/
