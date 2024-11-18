@@ -88,8 +88,14 @@ figure {
     position: relative;
 }
 
+figure img {
+    display: block;
+    margin: auto;
+}
+
 figcaption {
     text-align: center;
+    padding-top: 0.5rem;
 }
 
 img {
