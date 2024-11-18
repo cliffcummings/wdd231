@@ -48,6 +48,7 @@ h1 {
     font-size: 1.5rem;
     text-align: left;
     margin-right: 2rem;
+    color: var(--accent_color3);
 }
 
 h2 {
@@ -140,6 +141,7 @@ p.notdone {
 
 #menu::before {
     content: "☰";
+    color: var(--accent_color3)
 }
 
 #menu.open::before {
