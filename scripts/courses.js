@@ -80,8 +80,6 @@ const courses = [
 
 const doc = document;
 
-console.log("DEBUG #1");
-
 displayCourseWork(courses);
 
 // Call the createCoursesCard() function (defined below)
@@ -95,37 +93,30 @@ const wddlink = doc.querySelector("#wdd");
 // All button - get all courses
 alllink.addEventListener('click', () => {
     console.clear();
-    console.log("Clicked All");
+    // console.log("Clicked All");
 	let allcourses = courses;
-    console.log(allcourses);
+    // console.log(allcourses);
 	createCoursesCard(allcourses);
 })
 
-console.log("DEBUG #2");
-
 cselink.addEventListener('click', () => {
     console.clear();
-    console.log("Clicked CSE");
+    // console.log("Clicked CSE");
 	let csecourses = courses.filter(courses => courses.subject.includes('CSE'));
-    console.log(csecourses);
-    console.log();
+    // console.log(csecourses);
 	createCoursesCard(csecourses);
 })
 
-console.log("DEBUG #3");
-
 wddlink.addEventListener('click', () => {
     console.clear();
-    console.log("Clicked WDD");
+    // console.log("Clicked WDD");
 	let wddcourses = courses.filter(courses => courses.subject.includes("WDD"));
-    console.log(wddcourses);
+    // console.log(wddcourses);
 	createCoursesCard(wddcourses);
 })
 
-console.log("DEBUG #4");
-
 function displayCourseWork(courses) {
-    console.clear();
+    // console.clear();
 	// clear out last selected list of courses
     let creditTotal = 0;
 
@@ -139,7 +130,7 @@ function displayCourseWork(courses) {
 
         let classtitle = `${course.subject} ${course.number} - ${course.title}`;
         let classcredits = course.credits;
-        console.log(`${classtitle} with ${classcredits} credits: total ${creditTotal}`);
+        // console.log(`${classtitle} with ${classcredits} credits: total ${creditTotal}`);
 
         let infoText = doc.createElement("p");
         infoText.classList.add("courses");
@@ -165,27 +156,24 @@ function displayCourseWork(courses) {
 
 function createCoursesCard(filteredcourses) {
     // console.clear();
-    console.log(`DEBUG filtered courses ${JSON.stringify(filteredcourses,null,'\t')}`);
-    console.log(filteredcourses);
+    // console.log(`DEBUG filtered courses ${JSON.stringify(filteredcourses,null,'\t')}`);
+    // console.log(filteredcourses);
 
 	// clear out last selected list of courses
 	doc.querySelector(".container").innerHTML="";
-
-    // filter(filteredcourses => filteredcourses.completed.includes("true"));
 
 	// Foreach Subject in the courses Array, do the following
 	filteredcourses.forEach(course => {
 
         // Has the course been completed?
         let done = course.completed;
-        console.log(done);
+        // console.log(done);
 
 		let card       = doc.createElement("div");
 		card.classList.add("card");
 		// Above - add class="card" to the above <div class="card">
 
         let coursename = doc.createElement("p");
-        console.log("DEBUG #5");
         if (done==true) {
             coursename.classList.add("done");
         }
@@ -193,21 +181,15 @@ function createCoursesCard(filteredcourses) {
             coursename.classList.add("notdone");
         }
 
-        console.log("DEBUG #6");
-		// coursename.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;
         let courseNameStr = `${course.subject}${course.number}`
-        console.log(courseNameStr);
+        // console.log(courseNameStr);
 		coursename.innerHTML   = courseNameStr;
 
-        console.log("DEBUG #7");
         card.appendChild(coursename);
-        console.log(coursename);
+        // console.log(coursename);
 
-        console.log(card);
-        console.log("DEBUG #8");
+        // console.log(card);
         doc.querySelector(".container").appendChild(coursename);
-
-        console.log("DEBUG #9");
 	})
 }
 
