@@ -142,9 +142,15 @@ function createCoursesCard(filteredcourses) {
 		let card       = doc.createElement("div");
 		card.classList.add("card");
 		// Above - add class="card" to the above <div class="card">
-        
+
+        let coursename = doc.createElement("p");
         console.log("DEBUG #5");
-		let coursename = doc.createElement("p");
+        if (done==true) {
+            coursename.classList.add("done");
+        }
+        else {
+            coursename.classList.add("notdone");
+        }
 
         console.log("DEBUG #6");
 		// coursename.innerHTML   = `<span class="label">Course: </span> ${course.subject}${course.number}`;

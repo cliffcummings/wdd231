@@ -84,6 +84,13 @@ nav a:hover {
     text-decoration: underline;
 }
 
+figure {
+    position: relative;
+}
+
+figcaption {
+    text-align: center;
+}
 
 img {
     margin-right: 1rem;
@@ -97,11 +104,16 @@ ul li {
     color: var(--back_color2);
 }
 
-p {
-    background-color: red;
+p.done {
+    background-color: brown;
     color: white;
-    padding: 10% 10%;
-    border-radius: 20%;
+    padding: 5%;
+}
+
+p.notdone {
+    background-color: lightgray;
+    color: black;
+    padding: 5%
 }
 
 /*-------------------------------------------------*/
@@ -135,10 +147,13 @@ p {
 /*-------------------------------------------------*/
 /* Class Selectors                                 */
 /*-------------------------------------------------*/
+
 .container {
+    box-sizing: border-box;
+    border: solid lightgray 1px;
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 50px;
+    grid-gap: 5px;
     place-items: center;
 }
 
@@ -169,16 +184,17 @@ p {
     flex-direction: row;
     justify-content: center;
     list-style: none;
-    background-color: #333;
-    color: #fff;
+    background-color: white;
+    margin: 1rem;
 }
 
 .selector a {
     display: block;
-    flex: 1 1 1;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
     text-align: center;
     text-decoration: none;
+    background-color: #333;
     color: #fff;
 }
 
