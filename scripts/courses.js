@@ -94,33 +94,33 @@ const wddlink = doc.querySelector("#wdd");
 alllink.addEventListener('click', () => {
     console.clear();
     // console.log("Clicked All");
-	let allcourses = courses;
+    let allcourses = courses;
     // console.log(allcourses);
-	createCoursesCard(allcourses);
+    createCoursesCard(allcourses);
 })
 
 cselink.addEventListener('click', () => {
     console.clear();
     // console.log("Clicked CSE");
-	let csecourses = courses.filter(courses => courses.subject.includes('CSE'));
+    let csecourses = courses.filter(courses => courses.subject.includes('CSE'));
     // console.log(csecourses);
-	createCoursesCard(csecourses);
+    createCoursesCard(csecourses);
 })
 
 wddlink.addEventListener('click', () => {
     console.clear();
     // console.log("Clicked WDD");
-	let wddcourses = courses.filter(courses => courses.subject.includes("WDD"));
+    let wddcourses = courses.filter(courses => courses.subject.includes("WDD"));
     // console.log(wddcourses);
-	createCoursesCard(wddcourses);
+    createCoursesCard(wddcourses);
 })
 
 function displayCourseWork(courses) {
     // console.clear();
-	// clear out last selected list of courses
+    // clear out last selected list of courses
     let creditTotal = 0;
 
-	doc.querySelector("#course-container").innerHTML="";
+    doc.querySelector("#course-container").innerHTML = "";
 
     let info = doc.createElement("div");
     info.classList.add("course-container");
@@ -135,21 +135,21 @@ function displayCourseWork(courses) {
         let infoText = doc.createElement("p");
         infoText.classList.add("courses");
         infoText.innerHTML = `${classtitle}`;
-        
+
         let creditText = doc.createElement("p");
         creditText.innerHTML = `${classcredits} credits`;
 
         doc.querySelector("#course-container").appendChild(infoText);
         doc.querySelector("#course-container").appendChild(creditText);
     })
-    
+
     let infoText = doc.createElement("p");
     infoText.classList.add("courses");
     infoText.innerHTML = `Total Credits`;
-    
+
     let creditText = doc.createElement("p");
     creditText.innerHTML = `${creditTotal} credits`;
-    
+
     doc.querySelector("#course-container").appendChild(infoText);
     doc.querySelector("#course-container").appendChild(creditText);
 }
@@ -159,22 +159,22 @@ function createCoursesCard(filteredcourses) {
     // console.log(`DEBUG filtered courses ${JSON.stringify(filteredcourses,null,'\t')}`);
     // console.log(filteredcourses);
 
-	// clear out last selected list of courses
-	doc.querySelector(".container").innerHTML="";
+    // clear out last selected list of courses
+    doc.querySelector(".container").innerHTML = "";
 
-	// Foreach Subject in the courses Array, do the following
-	filteredcourses.forEach(course => {
+    // Foreach Subject in the courses Array, do the following
+    filteredcourses.forEach(course => {
 
         // Has the course been completed?
         let done = course.completed;
         // console.log(done);
 
-		let card       = doc.createElement("div");
-		card.classList.add("card");
-		// Above - add class="card" to the above <div class="card">
+        let card = doc.createElement("div");
+        card.classList.add("card");
+        // Above - add class="card" to the above <div class="card">
 
         let coursename = doc.createElement("p");
-        if (done==true) {
+        if (done == true) {
             coursename.classList.add("done");
         }
         else {
@@ -183,12 +183,38 @@ function createCoursesCard(filteredcourses) {
 
         let courseNameStr = `${course.subject}${course.number}`
         // console.log(courseNameStr);
-		coursename.innerHTML   = courseNameStr;
+        coursename.innerHTML = courseNameStr;
 
         card.appendChild(coursename);
         // console.log(coursename);
 
         // console.log(card);
         doc.querySelector(".container").appendChild(coursename);
-	})
+    })
 }
+
+//----------------------------------------------------------------------------
+// function mobileAdjust() {
+//     // Get width and height of the window excluding scrollbars
+//     let w = Number(doc.documentElement.clientWidth);
+//     // console.log(`w = ${w}`);
+
+//     if (w > 700) {
+//         doc.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png"
+//                                              alt="Cliff Cummings photograph" height="480" align="left">`;
+//         // console.log("Large size!");
+//     } else {
+//         doc.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_374_480.png"
+//         alt="Cliff Cummings photograph" height="240" align="left">`;
+//         // doc.getElementById("image-src").innerHTML = `<img src="./images/photo_cliff_187_240.png"
+//         //                                      alt="Cliff Cummings photograph" height="240" align="left">`;
+//         // console.log("Small size!");
+//     };
+// }
+
+// // Attaching the event listener function to window's resize event
+// window.addEventListener("resize", mobileAdjust);
+
+// // Calling the function for the first time
+// mobileAdjust();
+//----------------------------------------------------------------------------
