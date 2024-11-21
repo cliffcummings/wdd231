@@ -80,10 +80,9 @@ const courses = [
 
 const doc = document;
 
-displayCourseWork(courses);
-
 // Call the createCoursesCard() function (defined below)
 createCoursesCard(courses);
+displayCourseWork(courses);
 
 const alllink = doc.querySelector("#all");
 const cselink = doc.querySelector("#cse");
@@ -97,6 +96,7 @@ alllink.addEventListener('click', () => {
     let allcourses = courses;
     // console.log(allcourses);
     createCoursesCard(allcourses);
+    displayCourseWork(allcourses);
 })
 
 cselink.addEventListener('click', () => {
@@ -105,6 +105,7 @@ cselink.addEventListener('click', () => {
     let csecourses = courses.filter(courses => courses.subject.includes('CSE'));
     // console.log(csecourses);
     createCoursesCard(csecourses);
+    displayCourseWork(csecourses);
 })
 
 wddlink.addEventListener('click', () => {
@@ -113,6 +114,7 @@ wddlink.addEventListener('click', () => {
     let wddcourses = courses.filter(courses => courses.subject.includes("WDD"));
     // console.log(wddcourses);
     createCoursesCard(wddcourses);
+    displayCourseWork(wddcourses);
 })
 
 function displayCourseWork(courses) {

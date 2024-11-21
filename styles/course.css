@@ -154,7 +154,7 @@ p.notdone {
     justify-content: center;
 }
 
-#img-map {
+/* #img-map {
     width: 200px;
     aspect-ratio: 1.22;
 }
@@ -162,7 +162,7 @@ p.notdone {
 #img-head {
     width: 100px;
     aspect-ratio: .78;
-}
+} */
 
 /*-------------------------------------------------*/
 /* Class Selectors                                 */

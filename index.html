@@ -37,7 +37,12 @@
 <body>
     <header>
         <div class="head">
-            <img src="images/photo_cliff_193_374.webp" alt="Cliff Cummings" aria-label="Cliff Cummings" id="img-head">
+            <!-- <img src="images/photo_cliff_193_374.webp" alt="Cliff Cummings" aria-label="Cliff Cummings" id="img-head"> -->
+             <picture>
+                <source media="(min-width:650px)" srcset="images/photo_cliff_150_193.webp" >
+                <source media="(min-width:465px)" srcset="images/photo_cliff_100_128.webp">
+                <img src="images/photo_cliff_150_193.webp.webp" alt="Cliff Cummings" aria-label="Cliff Cummings" style="width:auto;">
+             </picture>
             <h1>Clifford E. Cummings</h1>
             <!-- <h1>WDD 231: Web Frontend Development - Cliff Cummings</h1> -->
         </div>
@@ -70,7 +75,12 @@
         <section class="rounded-box2">
             <h2>Provo, Utah</h2>
             <figure>
-                <img src="images/Utah-Provo-Map.webp" alt="Provo, Utah Map" aria-label="Provo, Utah Map" id="img-map">
+                <!-- <img src="images/Utah-Provo-Map.webp" alt="Provo, Utah Map" aria-label="Provo, Utah Map" id="img-map"> -->
+                <picture>
+                    <source media="(min-width:650px)" srcset="images/Utah-Provo-Map_200_240.webp">
+                    <source media="(min-width:465px)" srcset="images/Utah-Provo-Map_150_177.webp">
+                    <img src="images/Utah-Provo-Map_200_240.webp" alt="Cliff Cummings" aria-label="Cliff Cummings" style="width:auto;">
+                 </picture>
                 <figcaption>Provo, Utah</figcaption>
             </figure>
         </section>
