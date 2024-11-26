@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="WDD231 W02 Chamber Directory Page">
+    <meta name="author" content="Cliff Cummings">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/chamber.js" defer></script>
+        
+    <title>WDD231 Directory Page - Cliff Cummings</title>
+</head>
+<body>
+    <header class=".container">
+        <!-- Example had image at top before company name -->
+        <div>
+            <img src="./images/UVChamber_100_74.png" alt="UV Chamber Logo" style="width:100px;height:74px;">
+        </div>
+        <div class="pad">Utah Valley - Chamber of Commerce</div>
+        <button id="myButton"></button>
+    
+        <nav id="animateme">
+            <!-- <button id="myButton">&#9776;</button> -->
+            <!-- <button id="myButton"></button> -->
+            <ul class="menuLinks">
+                <li class="current-menu-item"><a href="#" title="Home">Home</a></li>
+                <li><a href="#" title="Discover">Discover</a></li>
+                <li><a href="#" title="Businesses">Business Directory</a></li>
+                <li><a href="#" title="Join">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <picture>
+                <img class="hero-image" src="images/1024px-Mount_Timpanogos_1024_350.webp" alt="Mount Timpanogos Image" width=100% height=100%>
+            </picture>
+            <div class="hero-text">
+                <p>Chamber Info</p>
+                <button>Join</button>
+            </div>
+            </div class="credits">
+                <a href="https://commons.wikimedia.org/wiki/File:Mount_Timpanogos_-_01-07-08.jpg">a4gpa from Provo, UT, USA</a>
+                <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0 via Wikimedia Commns</a>
+            </div>
+        </div>
+        
+        <div><h1>Home</h1></div>
+
+        <section id="home">
+            <div class="events">
+                <h2>Events</h2>
+                <p>Irure commodo cupidatat labore cillum consectetur ea fugiat. Qui excepteur aliqua elit ullamco voluptate magna deserunt cupidatat reprehenderit deserunt eiusmod tempor amet. Eu laborum tempor sit consequat laborum laborum do et sint esse id aute. Id tempor et mollit et labore amet magna est officia pariatur laboris. Duis enim minim reprehenderit culpa incididunt.</p>
+            </div>
+            <div class="other1">
+                <h2>Current Weather</h2>
+            </div>
+            <div class="other2">
+                <h2>Weather Forecast</h2>
+            </div>
+        </section>
+
+        <section id="buss">
+            <h2>Business Name</h2>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div>
+            <img src="./images/UVChamber_100_74.png" alt="UV Chamber Logo" style="width:100px;height:74px;">
+            <p>Provo</p>
+            <p>2696 N. University Ave Suite 220</p>
+            <p>Provo UT 84604</p>
+            <p>(385) 482-2555</p>
+            <p>info@thechamber.org</p>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/uvchamber/" target="_blank">
+                <img src="images/facebook_50_50.png" alt="Facebook">
+            </a>
+            <a class="social"  href="https://twitter.com/uvchamber" target="_blank">
+                <img src="images/twitter_50_50.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/utah_valley_chamber/" target="_blank">
+                <img src="images/instagram_50_50.png" alt="Instagram">
+            </a>
+        </div>
+
+        <div class="copy">
+            <p>WDD 231 Class Project</p>
+            <p>Cliff Cummings</p>
+            <p id="copywrite"></p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
