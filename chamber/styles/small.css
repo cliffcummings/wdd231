@@ -65,7 +65,7 @@ nav {
 }
 
 ul.menuLinks li a {
-    border: 1px dashed pink;
+    /* border: 1px dashed pink; */
     display: block;
     padding: .75rem 2vw;
     color: #fff;
@@ -104,7 +104,7 @@ nav.open {
 
 main {
     display: grid;
-    row-gap: 2px;
+    row-gap: 1px;
     max-width: 90%;
     margin: 1rem 5rem;
 
@@ -113,7 +113,7 @@ main {
 section {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 10px;
+    gap: 5px;
     justify-content: space-around;
 }
 
@@ -211,11 +211,15 @@ footer.container {
     align-items: center;
 }
 
-.cards {
+#cards {
     margin-left: 1rem;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 1rem;
+}
+
+#cards p {
+    font-size: 0.75rem;
 }
 
 .stats p {
@@ -233,8 +237,8 @@ section {
     margin: 1rem;
     padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgb(27, 11, 31, 1);
-    color: #fff;
+    background-color: var(--accent_color2);
+    color: var(--back_color1);
     width: 100%;
 	display: flex;
 	flex-direction: column;

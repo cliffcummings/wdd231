@@ -39,22 +39,25 @@ const displayBusinesses = (companies) => {
         console.table(company);
       // Create elements to add to the div.cards element
       let card = doc.createElement('section');
-      let h2 = doc.createElement('h2'); // fill in the blank
+      let h2 = doc.createElement('h2');
+      let web = doc.createElement('p');
       let phone = doc.createElement('p');
       let logo = doc.createElement('img');
   
       // Build the h2 content out to show company name
       h2.innerHTML = `${company.name}`;
+      web.innerHTML = `${company.url}`;
       phone.innerHTML = `${company.phoneNumber}`
       // Build the logo image 
       logo.setAttribute('src', company.imageurl);
-      logo.setAttribute('alt', `logo of ${company.name}`); // fill in the blank
+      logo.setAttribute('alt', `logo of ${company.name}`);
       logo.setAttribute('loading', 'lazy');
       logo.setAttribute('width', '140');
       logo.setAttribute('height', 'auto');
   
       // Append the section(card) with the created elements
       card.appendChild(h2);
+      card.appendChild(web);  
       card.appendChild(phone);  
       card.appendChild(logo);
   
