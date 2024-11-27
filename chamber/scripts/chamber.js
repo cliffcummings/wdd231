@@ -65,8 +65,8 @@ const displayBusinesses = (companies) => {
     }); // end of arrow function and forEach loop
   }
 
-  const gridButton = doc.querySelector('#grid_button');
-  const listButton = doc.querySelector('#list_button');
+  const gridButton = doc.querySelector('#select_grid');
+  const listButton = doc.querySelector('#select_list');
 
   let gridChoice = "grid";
   console.log("DEFAULT: grid");
