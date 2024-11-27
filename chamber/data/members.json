@@ -13,7 +13,7 @@
             "name" : "Ancestry",
             "address" : "Provo, UT",
             "phoneNumber" : "(801) 705-7000",
-            "url" : "ancestry.com",
+            "url" : "https://www.ancestry.com/",
             "imageurl" : "https://cmsasset.ancestrycdn.com/content/experience-fragments/global-xf/header/en-us-acom-lohp-header/master/_jcr_content/root/responsivegrid/header_copy106168284/logo.coreimg.svg/1682534305416/ancestry.svg",
             "memberLevel" : 3,
             "additionalInfo" : "Genealogy"
@@ -22,7 +22,7 @@
             "name" : "Caldera Engineering",
             "address" : "Provo, UT",
             "phoneNumber" : "(801) 356-2862",
-            "url" : "http://www.calderaengineering.com/",
+            "url" : "https://www.calderaengineering.com/",
             "imageurl" : "http://cdncaldera.azureedge.net/caldera-images/Template/caldera-logo.png",
             "memberLevel" : 2,
             "additionalInfo" : "Engineering"
@@ -31,7 +31,7 @@
             "name" : "Community Action Services and Food Bank",
             "address" : "Provo, UT",
             "phoneNumber" : "(801) 373-8200",
-            "url" : "http://www.communityactionuc.org/",
+            "url" : "https://www.communityactionprovo.org/",
             "imageurl" : "https://casfb.wpengine.com/wp-content/uploads/2021/06/community-action-services-logo.png",
             "memberLevel" : 1,
             "additionalInfo" : "Community Service"
@@ -40,7 +40,7 @@
             "name" : "Duncan Aviation",
             "address" : "Provo, UT",
             "phoneNumber" : "(801) 342-5600",
-            "url" : "http://www.duncanaviation.aero",
+            "url" : "https://www.duncanaviation.aero",
             "imageurl" : "https://www.duncanaviation.aero/images/logo-homepage.jpg",
             "memberLevel" : 2,
             "additionalInfo" : "Aviation"
@@ -58,7 +58,7 @@
             "name" : "Google Fiber",
             "address" : "Provo, UT",
             "phoneNumber" : "(978) 267-7686",
-            "url" : "http://www.google.com/fiber",
+            "url" : "https://fiber.google.com/",
             "imageurl" : "https://images.ctfassets.net/1fc9o8o7drlk/1bqmSv4C3zaHnIP2YsH3qB/7d7dd658f7bdf9975a76e9758a831d03/gfiber-logo.svg",
             "memberLevel" : 3,
             "additionalInfo" : "Internet Provider"
