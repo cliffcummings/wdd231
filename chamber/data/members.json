@@ -1,67 +1,74 @@
 {
-    "companies" : [
+    "companies": [
         {
-            "name" : "Nu Skin Enterprises",
-            "address" : "Provo, UT",
-            "phoneNumber" : "(801) 345-2104",
-            "url" : "https://www.nuskin.com/us/en/",
-            "imageurl" : "https://media.nuskin.com/m/5759f4991d36b1fe/original/nu-skin-logo.svg",
-            "memberLevel" : 3,
-            "additionalInfo" : "Health Products"
+            "name": "Nu Skin Enterprises",
+            "address": "Provo, UT",
+            "phoneNumber": "(801) 345-2104",
+            "url": "https://www.nuskin.com/us/en/",
+            "imageurl": "images/nu-skin-logo.svg",
+            "imageurlsrc": "https://media.nuskin.com/m/5759f4991d36b1fe/original/nu-skin-logo.svg",
+            "memberLevel": 3,
+            "additionalInfo": "Health Products"
         },
         {
-            "name" : "Ancestry",
-            "address" : "Provo, UT",
-            "phoneNumber" : "(801) 705-7000",
-            "url" : "https://www.ancestry.com/",
-            "imageurl" : "https://cmsasset.ancestrycdn.com/content/experience-fragments/global-xf/header/en-us-acom-lohp-header/master/_jcr_content/root/responsivegrid/header_copy106168284/logo.coreimg.svg/1682534305416/ancestry.svg",
-            "memberLevel" : 3,
-            "additionalInfo" : "Genealogy"
+            "name": "Ancestry",
+            "address": "Provo, UT",
+            "phoneNumber": "(801) 705-7000",
+            "url": "https://www.ancestry.com/",
+            "imageurl": "images/ancestry.svg",
+            "imageurlsrc": "https://cmsasset.ancestrycdn.com/content/experience-fragments/global-xf/header/en-us-acom-lohp-header/master/_jcr_content/root/responsivegrid/header_copy106168284/logo.coreimg.svg/1682534305416/ancestry.svg",
+            "memberLevel": 3,
+            "additionalInfo": "Genealogy"
         },
         {
-            "name" : "Caldera Engineering",
-            "address" : "Provo, UT",
-            "phoneNumber" : "(801) 356-2862",
-            "url" : "https://www.calderaengineering.com/",
-            "imageurl" : "http://cdncaldera.azureedge.net/caldera-images/Template/caldera-logo.png",
-            "memberLevel" : 2,
-            "additionalInfo" : "Engineering"
+            "name": "Caldera Engineering",
+            "address": "Provo, UT",
+            "phoneNumber": "(801) 356-2862",
+            "url": "https://www.calderaengineering.com/",
+            "imageurl": "images/caldera-logo.png",
+            "imageurlsrc": "https://cdncaldera.azureedge.net/caldera-images/Template/caldera-logo.png",
+            "memberLevel": 2,
+            "additionalInfo": "Engineering"
         },
         {
-            "name" : "Community Action Services and Food Bank",
-            "address" : "Provo, UT",
-            "phoneNumber" : "(801) 373-8200",
-            "url" : "https://www.communityactionprovo.org/",
-            "imageurl" : "https://casfb.wpengine.com/wp-content/uploads/2021/06/community-action-services-logo.png",
-            "memberLevel" : 1,
-            "additionalInfo" : "Community Service"
+            "name": "Community Action Services and Food Bank",
+            "address": "Provo, UT",
+            "phoneNumber": "(801) 373-8200",
+            "url": "https://www.communityactionprovo.org/",
+            "imageurl": "images/community-action-services-logo.png",
+            "imageurlsrc": "https://casfb.wpengine.com/wp-content/uploads/2021/06/community-action-services-logo.png",
+            "memberLevel": 1,
+            "additionalInfo": "Community Service"
         },
         {
-            "name" : "Duncan Aviation",
-            "address" : "Provo, UT",
-            "phoneNumber" : "(801) 342-5600",
-            "url" : "https://www.duncanaviation.aero",
-            "imageurl" : "https://www.duncanaviation.aero/images/logo-homepage.jpg",
-            "memberLevel" : 2,
-            "additionalInfo" : "Aviation"
+            "name": "Duncan Aviation",
+            "address": "Provo, UT",
+            "phoneNumber": "(801) 342-5600",
+            "url": "https://www.duncanaviation.aero",
+            "imageurl": "images/logo-homepage.jpg",
+            "imageurlsrc": "https://www.duncanaviation.aero/images/logo-homepage.jpg",
+            "memberLevel": 2,
+            "additionalInfo": "Aviation"
         },
         {
-            "name" : "Squire",
-            "address" : "Orem, UT",
-            "phoneNumber" : "(801) 225-6900",
-            "url" : "https://www.squire.com",
-            "imageurl" : "https://www.squire.com/wp-content/themes/squire-2019/images/svg/squirelogo.svg",
-            "memberLevel" : 3,
-            "additionalInfo" : "Accounting"
+            "name": "Squire",
+            "address": "Orem, UT",
+            "phoneNumber": "(801) 225-6900",
+            "url": "https://www.squire.com",
+            "imageurl": "images/squirelogo.svg",
+            "imageurlsrc": "https://www.squire.com/wp-content/themes/squire-2019/images/svg/squirelogo.svg",
+            "memberLevel": 3,
+            "additionalInfo": "Accounting"
         },
         {
-            "name" : "Google Fiber",
-            "address" : "Provo, UT",
-            "phoneNumber" : "(978) 267-7686",
-            "url" : "https://fiber.google.com/",
-            "imageurl" : "https://images.ctfassets.net/1fc9o8o7drlk/1bqmSv4C3zaHnIP2YsH3qB/7d7dd658f7bdf9975a76e9758a831d03/gfiber-logo.svg",
-            "memberLevel" : 3,
-            "additionalInfo" : "Internet Provider"
+            "name": "Google Fiber",
+            "address": "Provo, UT",
+            "phoneNumber": "(978) 267-7686",
+            "url": "https://fiber.google.com/",
+            "imageurl": "https://images.ctfassets.net/1fc9o8o7drlk/1bqmSv4C3zaHnIP2YsH3qB/7d7dd658f7bdf9975a76e9758a831d03/gfiber-logo.svg",
+            "imageurlsrc": "https://images.ctfassets.net/1fc9o8o7drlk/1bqmSv4C3zaHnIP2YsH3qB/7d7dd658f7bdf9975a76e9758a831d03/gfiber-logo.svg",
+            "memberLevel": 3,
+            "additionalInfo": "Internet Provider"
         }
     ]
 }
