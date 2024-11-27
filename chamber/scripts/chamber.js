@@ -64,3 +64,20 @@ const displayBusinesses = (companies) => {
       cards.appendChild(card);
     }); // end of arrow function and forEach loop
   }
+
+  const gridButton = doc.querySelector('#grid_button');
+  const listButton = doc.querySelector('#list_button');
+
+  let gridChoice = "grid";
+  console.log("DEFAULT: grid");
+
+
+gridButton.addEventListener('click', () => {
+    console.log("gridButton clicked");
+    gridChoice = "grid";
+});
+
+listButton.addEventListener('click', () => {
+    console.log("listButton clicked");
+    gridChoice = "list";
+});
