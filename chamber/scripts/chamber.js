@@ -44,8 +44,11 @@ const displayBusinesses = (companies) => {
   
         // Build the h2 content out to show company name
         h2.innerHTML = `${company.name}`;
+        h2.setAttribute("class", "buss_name");
         web.innerHTML = `${company.url}`;
-        phone.innerHTML = `${company.phoneNumber}`
+        web.setAttribute("class", "web_url");
+        phone.innerHTML = `${company.phoneNumber}`;
+        phone.setAttribute("class", "phone");
         // Build the logo image 
         logo.setAttribute('src', company.imageurl);
         logo.setAttribute('alt', `logo of ${company.name}`);
@@ -73,9 +76,11 @@ console.log("SETTING DEFAULT: grid mode");
 gridButton.addEventListener('click', () => {
     console.log("gridButton clicked");
     gridChoice = "grid";
+    cards.setAttribute('class', gridChoice);
 });
 
 listButton.addEventListener('click', () => {
     console.log("listButton clicked");
     gridChoice = "list";
+    cards.setAttribute('class', gridChoice);
 });
