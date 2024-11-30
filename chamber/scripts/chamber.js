@@ -38,13 +38,22 @@ const displayBusinesses = (companies) => {
         // Create elements to add to the div.cards element
         let card = doc.createElement('section');
         let h2 = doc.createElement('h2');
+        let level = doc.createElement('p');
+        let address = doc.createElement('p');
         let web = doc.createElement('p');
         let phone = doc.createElement('p');
         let logo = doc.createElement('img');
-  
+          
         // Build the h2 content out to show company name
         h2.innerHTML = `${company.name}`;
         h2.setAttribute("class", "buss_name");
+        if (company.memberLevel == 3) {
+            level.innerHTML = `Gold Level - &#x2605&#x2605&#x2605`;
+        } else if (company.memberLevel == 2) {
+            level.innerHTML = `Silver Level - &#x2605&#x2605`;           
+        }
+        address.innerHTML = `${company.address}`;
+        address.setAttribute("class", "addr");
         web.innerHTML = `${company.url}`;
         web.setAttribute("class", "web_url");
         phone.innerHTML = `${company.phoneNumber}`;
@@ -58,6 +67,8 @@ const displayBusinesses = (companies) => {
   
         // Append the section(card) with the created elements
         card.appendChild(h2);
+        card.appendChild(level);  
+        card.appendChild(address);  
         card.appendChild(web);  
         card.appendChild(phone);  
         card.appendChild(logo);
