@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +11,10 @@
     <meta property="og:title" content="WDD231 W02 Chamber Directory Page">
     <meta property="og:type" content="website">
     <meta property="og:description" content="WDD231 W02 Chamber Directory Page developed by Cliff Cummings.">
-    <meta property="og:image"
-        content="https://cliffcummings.github.io/wdd231/chamber/images/1024px-Mount_Timpanogos_1024_350.webp">
+    <meta property="og:image" content="https://cliffcummings.github.io/wdd231/chamber/images/1024px-Mount_Timpanogos_1024_350.webp">
     <meta property="og:url" content="https://cliffcummings.github.io/wdd231/chamber/directory.html#">
+
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
@@ -28,8 +28,9 @@
 
     <script src="scripts/getdates.js" defer></script>
     <script src="scripts/chamber.js" defer></script>
-
-    <title>WDD231 Directory Page - Cliff Cummings</title>
+    <script src="scripts/weather.js" defer></script>
+        
+    <title>WDD231 Home Page - Cliff Cummings</title>
 </head>
 
 <body>
@@ -40,20 +41,20 @@
         </div>
         <div class="pad">Utah Valley - Chamber of Commerce</div>
         <button id="myButton"></button>
-
-        <nav id="animateme">
-            <!-- <button id="myButton">&#9776;</button> -->
-            <!-- <button id="myButton"></button> -->
-            <ul class="menuLinks">
-                <li class="current-menu-item"><a href="#" title="Home">Home</a></li>
-                <li><a href="#" title="Discover">Discover</a></li>
-                <li><a href="#" title="Businesses">Business Directory</a></li>
-                <li><a href="#" title="Join">Join</a></li>
-            </ul>
-        </nav>
     </header>
+    
+    <nav id="animateme">
+        <!-- <button id="myButton">&#9776;</button> -->
+        <!-- <button id="myButton"></button> -->
+        <ul class="menuLinks">
+            <li class="current-menu-item"><a href="index.html" title="Home"></a>Home</a></li>
+            <li><a href="#" title="Discover">Discover</a></li>
+            <li><a href="directory.html" title="Businesses">Business Directory</a></li>
+            <li><a href="#" title="Join">Join</a></li>
+        </ul>
+    </nav>
 
-    <main>
+    <!-- <main>
         <div>
             <picture>
                 <img class="hero-image" src="images/1024px-Mount_Timpanogos_1024_350.webp" alt="Mount Timpanogos Image"
@@ -94,7 +95,7 @@
                 <div id="cards"></div>
             </div>
         </section>
-    </main>
+    </main> -->
 
     <footer class="container">
         <div>
@@ -109,7 +110,7 @@
             <a href="https://www.facebook.com/uvchamber/" target="_blank">
                 <img src="images/facebook_50_50.png" alt="Facebook">
             </a>
-            <a class="social" href="https://twitter.com/uvchamber" target="_blank">
+            <a href="https://twitter.com/uvchamber" target="_blank">
                 <img src="images/twitter_50_50.png" alt="Twitter">
             </a>
             <a href="https://www.instagram.com/utah_valley_chamber/" target="_blank">

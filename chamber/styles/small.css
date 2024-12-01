@@ -53,6 +53,13 @@ button {
     content: "\2630";
 }
 
+/* FOOTER CONTENT */
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
  /* Hamburger button settings */
 #myButton {
     font-size: 2rem;
@@ -137,11 +144,6 @@ h1 {
 
 h2 {
     grid-row: 1 / 4;
-}
-
-footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
 }
 
 #home {
