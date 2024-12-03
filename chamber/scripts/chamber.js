@@ -8,14 +8,14 @@ hamburgerElement.addEventListener('click', () => {
     hamburgerElement.classList.toggle('open');
 });
 
-const url = 'data/members.json';
+const membersURL = 'data/members.json';
 const cards = document.querySelector('#cards');
   
 console.log("Going to GET business data");
 getBusinessData();
 
 async function getBusinessData() {
-    const response = await fetch(url);
+    const response = await fetch(membersURL);
     if (response.ok) {
         const data = await response.json();
         console.log("AWAITING RESPONSE data");
@@ -44,7 +44,7 @@ const displayBusinesses = (companies) => {
         let phone = doc.createElement('p');
         let logo = doc.createElement('img');
           
-        // Build the h2 content out to show company name
+        // Build the h2 content out to show company name and level
         h2.innerHTML = `${company.name}`;
         h2.setAttribute("class", "buss_name");
         if (company.memberLevel == 3) {
