@@ -51,12 +51,24 @@ function displayResults(data) {
 function displayForecast(data) {
     console.log("Display Forecast function called");
     console.log(data);
+    const arrayFromObject = Object.values(data.list); 
+    arrayFromObject.forEach(item => {
+        console.log(`dt / dt_txt VALUES ARE ${item.dt} / ${item.dt_txt}`);
+    });
+    // data.list.foreach (day => {
+    //     console.log(`dt_txt VALUE IS: ${item.dt_txt}`);
+    // });
     // data.list.foreach (day => {
     //     console.log(`dt_txt VALUE IS: ${day.dt_txt}`);
     // });
     
-    const today = data.list[0].dt;
-    console.log(`Today's dt/ is ${data.list[0].dt} : ${data.list[0].dt_txt}`);
+    const option = {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+    };
+    const today = new Date(data.list[0].dt, option);
+    console.log(`Today's dt/ is ${today} : ${data.list[0].dt_txt}`);
     // const filteredcnotes = cnotes.filter      (cnotes       => cnotes.tags.includes      (tag));
 
     const dayPlus1 = data.list[0].dt+1;
@@ -64,32 +76,17 @@ function displayForecast(data) {
     const dayPlus3 = dayPlus1 + 2;
     console.log(`Next three dt values: ${dayPlus1} / ${dayPlus2} / ${dayPlus3} `);
 
-    const forecastDay1 = data.list.filter (data => data.list.includes(dayPlus1));
-    // const forecastDay2 = filterArray(data.list, getFutureDay(2));
-    // const forecastDay3 = filterArray(data.list, getFutureDay(3));
+    let forecastDay1 = (dayPlus1 => arrayFromObject.includes(dayPlus1));
+    let forecastDay2 = (arrayFromObject => arrayFromObject.includes(dayPlus2));
+    let forecastDay3 = (arrayFromObject => arrayFromObject.includes(dayPlus3));
 
-    // console.log(forecastDay1);
+    console.log(`SHOWING ${forecastDay1}`);
+    console.log(`SHOWING ${forecastDay2}`);
+    console.log(`SHOWING ${forecastDay3}`);
     // console.log(forecastDay2);
     // console.log(forecastDay3);
 }
 
-function filterArray(array, futureDate) {
-    const filteredArray = array.filter((item) => {
-        const itemDay = new Date(item.dt_txt);
-        const itemDate = itemDay.getDate();
-        if (itemDate == futureDate) {
-            return item;
-        };
-        console.log(`Returned item is ${item}`);
-    });
-    return filteredArray;
-}
-
-function getFutureDay(num) {
-    const today = new Date();
-    const date = today.getDate() + num;
-    return date;
-}
 
 apiFetch(weatherUrl);
 apiFetch(forecastUrl);
