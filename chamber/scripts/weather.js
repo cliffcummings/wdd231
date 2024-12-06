@@ -212,6 +212,16 @@ function getFullDate(dt) {
     return day.toLocaleString("en-us", options);
 }
 
+function createForecastCard(date, temp, desc, icon) {
+    return `<section class="forcast-card">
+    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" width="100" height="100">
+    <div>
+    <h4>${date}</h4>
+    <p class="weather-desc">${desc}</p>
+    <p>High: ${temp}&deg;F</p>
+    <div>
+    </section>`
+};
 
 apiFetch(weatherUrl);
 apiFetch(forecastUrl);
