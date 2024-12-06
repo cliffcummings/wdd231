@@ -173,7 +173,8 @@ main {
 #forecast {
     grid-column: 3 / 4;
     padding: 0 1rem;
-    background-color: #EFEFEF;
+    background-color: lightblue;
+    text-transform: capitalize;
 }
 
 /* HERO IMAGE & JOIN BUTTON */

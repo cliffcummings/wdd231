@@ -1,11 +1,6 @@
 // const currentW = doc.querySelector('#weather');
 console.log("Going to GET WEATHER data");
 
-// Select HTML elements in the document
-let currentTemp = doc.querySelector('#current-temp');
-let weatherIcon = doc.querySelector('#weather-icon');
-let captionDesc = doc.querySelector('figcaption');
-
 // CREATE REQUIRED VARIABLES FOR THE WEATHER URL
 const myKey = "73800dbdd8f82289ae1b430c2dba614e";
 const myLat = "40.23333058402793";
@@ -24,7 +19,7 @@ async function apiFetch(url) {
             const data = await response.json();
             // console.log(data);    // testing only
             if (url == weatherUrl) {
-                displayResults(data);
+                displayCurrentWeather(data);
             } else if (url == forecastUrl) {
                 // console.log("Going to display Forecast");
                 // console.log(`list[0].dt VALUE IS: ${data.list[0].dt}`);
@@ -38,117 +33,174 @@ async function apiFetch(url) {
     }
 };
 
-function displayResults(data) {
-    console.log("Display Results function called");
-    // console.log(`data.city ${data}`);
+// Select current weather HTML elements in the document
+let captionDesc = doc.querySelector('figcaption');
+let currentTemp = doc.querySelector('#current-temp');
+let weatherIcon = doc.querySelector('#weather-icon');
+
+function displayCurrentWeather(data) {
+    console.log("displayCurrentWeather function called");
+    console.log(data);
+    console.log("data displayed above");
     captionDesc.innerHTML = data.weather[0].description;
-    currentTemp.innerHTML = `${data.main.temp}&deg;F`;
+    currentTemp.innerHTML = `${data.main.temp.toFixed(0)}&deg;F`;
+
     const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    // const iconsrc = 'https://openweathermap.org/img/wn/02d@2x.png';
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('alt', data.weather[0].description);
 };
 
+// Select forecast HTML elements in the document
+let day1Date = doc.querySelector('#date1');
+let day1Temp = doc.querySelector('#temp1');
+let day1Icon = doc.querySelector('#icon1');
+let day1Desc = doc.querySelector('#fig1');
+
+let day2Date = doc.querySelector('#date2');
+let day2Temp = doc.querySelector('#temp2');
+let day2Icon = doc.querySelector('#icon2');
+let day2Desc = doc.querySelector('#fig2');
+
+let day3Date = doc.querySelector('#date3');
+let day3Temp = doc.querySelector('#temp3');
+let day3Icon = doc.querySelector('#icon3');
+let day3Desc = doc.querySelector('#fig3');
+
 function displayForecast(data) {
-    console.log("Display Forecast function called");
+    console.log("displayForecast function called");
     // console.log(data);
     dateArray = createDatesArray();
     const arrayFromObject = Object.values(data.list); 
-    let filteredDay1List = filterArray(arrayFromObject, dateArray[1]);
-    let filteredDay2List = filterArray(arrayFromObject, dateArray[2]);
-    let filteredDay3List = filterArray(arrayFromObject, dateArray[3]);
-    // console.log(filteredDay1List);
-    let max = returnMaxTemp(filteredDay1List);
-    console.log(`Day 1 MAX is: ${max}`);
-    max = returnMaxTemp(filteredDay2List);
-    console.log(`Day 2 MAX is: ${max}`);
-    max = returnMaxTemp(filteredDay3List);
-    console.log(`Day 3 MAX is: ${max}`);
-    arrayFromObject.forEach(item => {
-        const date = new Date(item.dt_txt);
-        // const formattedDate = formatDate(date);
-        // console.log(`=========================================`);
-        // console.log(`===== The formattedDate: ${formattedDate} =====`);
+    let filteredDay1 = filterArray(arrayFromObject, dateArray[1]);
+    let filteredDay2 = filterArray(arrayFromObject, dateArray[2]);
+    let filteredDay3 = filterArray(arrayFromObject, dateArray[3]);
+    // console.log(filteredDay1);
 
-        // const matchDate = item.dt_txt.slice(0,10);
-        // console.log(`dt_txt DATE: ${matchDate}`);
+    let day1 = returnDayInfo(filteredDay1, dateArray[1]);
+    console.log(`Day 1 INFO is: ${day1}`);
 
-        // if (matchDate === newDate) {
-        //     console.log("***** DATES MATCH *****");
-        // } else {
-        //     console.log("***** DATES DO NOT MATCH *****");
-        // };
-    });
+    let day2 = returnDayInfo(filteredDay2, dateArray[2]);
+    console.log(`Day 2 INFO is: ${day2}`);
 
-    function formatDate (date) {
-        const options = {
-            year:  "numeric",
-            month: "2-digit",
-            day:   "2-digit"
-        };
-        const formattedDate = new Intl.DateTimeFormat("en-US", options).format(date);
-        const [month, day, year] = formattedDate.split("/");
-        newDate = `${year}-${month}-${day}`;
-        // console.log(`=========================================`);
-        // console.log(`===== The NEW formattedDate: ${newDate} =====`);
-        return newDate;
+    let day3 = returnDayInfo(filteredDay3, dateArray[3]);
+    console.log(`Day 3 INFO is: ${day3}`);
+
+    console.log(day1[3]);
+    console.log(day2[1]);
+    console.log(day3[1]);
+    // day1Temp.innerHTML = day1[1];
+
+
+
+    const iconsrc1 = `https://openweathermap.org/img/wn/${day1[0]}@2x.png`;
+    day1Icon.setAttribute('src', iconsrc1);
+    day1Icon.setAttribute('alt', day1[1]);
+    day1Date.innerHTML = `${day1[1]}`;
+    day1Desc.innerHTML = `${day1[2]}`;
+    day1Temp.innerHTML = `High: ${day1[3]}&deg;F`;
+
+    const iconsrc2 = `https://openweathermap.org/img/wn/${day2[0]}@2x.png`;
+    day2Icon.setAttribute('src', iconsrc2);
+    day2Icon.setAttribute('alt', day2[1]);
+    day2Date.innerHTML = `${day2[1]}`;
+    day2Desc.innerHTML = `${day2[2]}`;
+    day2Temp.innerHTML = `High: ${day2[3]}&deg;F`;
+
+    const iconsrc3 = `https://openweathermap.org/img/wn/${day3[0]}@2x.png`;
+    day3Icon.setAttribute('src', iconsrc3);
+    day3Icon.setAttribute('alt', day3[1]);
+    day3Date.innerHTML = `${day3[1]}`;
+    day3Desc.innerHTML = `${day3[2]}`;
+    day3Temp.innerHTML = `High: ${day3[3]}&deg;F`;
+}  
+
+function formatDate (date) {
+    const options = {
+        year:  "numeric",
+        month: "2-digit",
+        day:   "2-digit"
     };
+    const formattedDate = new Intl.DateTimeFormat("en-US", options).format(date);
+    const [month, day, year] = formattedDate.split("/");
+    newDate = `${year}-${month}-${day}`;
+    // console.log(`=========================================`);
+    // console.log(`===== The NEW formattedDate: ${newDate} =====`);
+    return newDate;
+};
 
-    function createDatesArray () {
-        const today = new Date();
-        const newday = new Date();
-        const dateArray = [];
-        for (i=0; i<4; i++ ){
-            dateArray[i] = formatDate(newday.setDate(today.getDate() + i));
-            // console.log(`SHOWING dateArray[${i}]: ${dateArray[i]}`);
-        }
-        return dateArray;
-    };
-   
-    // To prove dates are working, uncomment the next four lines
-    // const today = new Date();
-    // let future = new Date();
-    // future = formatDate(future.setDate(today.getDate() + 30)); // Add 30 days
-    // console.log(`SHOWING DAY+30: ${future}`);
-    
-    // console.log(`Today's dt_txt is ${data.list[0].dt_txt} ::: Tomorrow is ${dateArray[1]}`);
-    
-    // Process array items searching for matching dates and 
-    // store them into the filtered array
-    function filterArray(array, requestedDate) {
-        // console.log(array);
-        // console.log(requestedDate);
-        const filteredArray = array.filter((item) => {
-            // console.log(`START: ${item.dt_txt}`);  // TODO - DEBUG
-            const itemDay = new Date(item.dt_txt);
-            // console.log(`FROM filterArray function: ${itemDay}`);
-            let itemDate = formatDate(itemDay);
-            // console.log(`itemDate:      ${itemDate}`);
-            // console.log(`requestedDate: ${requestedDate}`);
-            if (itemDate == requestedDate) {
-                // console.log(`PASS:  ${item.dt_txt}`);  // TODO - DEBUG
-                return item;
-            } else {
-                // console.log(`FAIL:  ${item.dt_txt}`);  // TODO - DEBUG
-            };
-        });
-        // console.log(filterArray);
-        return filteredArray;
+function createDatesArray () {
+    const today = new Date();
+    const newday = new Date();
+    const dateArray = [];
+    for (i=0; i<4; i++ ){
+        dateArray[i] = formatDate(newday.setDate(today.getDate() + i));
+        console.log(`SHOWING dateArray[${i}]: ${dateArray[i]}`);
     }
+    return dateArray;
+};
+   
+// To prove dates are working, uncomment the next four lines
+// const today = new Date();
+// let future = new Date();
+// future = formatDate(future.setDate(today.getDate() + 30)); // Add 30 days
+// console.log(`SHOWING DAY+30: ${future}`);
 
-    function returnMaxTemp (array) {
-        let max = 0;
-        // console.log(max);
-        // console.log(array.length);
-        // console.log(array[0].main.temp_max);
-        for (let i=0; i<array.length; i++) {
-            if (array[i].main.temp_max > max) {
-                max = array[i].main.temp_max;
-                // console.log(`for-loop temp_max is ${array[i].main.temp_max}`);
-            }
+// console.log(`Today's dt_txt is ${data.list[0].dt_txt} ::: Tomorrow is ${dateArray[1]}`);
+    
+// Process array items searching for matching dates and 
+// store them into the filtered array
+function filterArray(array, requestedDate) {
+    // console.log(array);
+    // console.log(requestedDate);
+    const filteredArray = array.filter((item) => {
+        // console.log(`START: ${item.dt_txt}`);  // TODO - DEBUG
+        const itemDay = new Date(item.dt_txt);
+        // console.log(`FROM filterArray function: ${itemDay}`);
+        let itemDate = formatDate(itemDay);
+        // console.log(`itemDate:      ${itemDate}`);
+        // console.log(`requestedDate: ${requestedDate}`);
+        if (itemDate == requestedDate) {
+            // console.log(`PASS:  ${item.dt_txt}`);  // TODO - DEBUG
+            return item;
+        // } else {
+            // console.log(`FAIL:  ${item.dt_txt}`);  // TODO - DEBUG
         };
-        return max;
-    };
+    });
+    // console.log(filterArray);
+    return filteredArray;
 }
+
+function returnDayInfo (array, dateString) {
+    let max = 0;
+    let desc = "";
+    let date = dateString;
+    let icon = "initialIcon";
+    let returnData = [max, desc, date, icon];
+    // console.log(`INITIAL returnData values: ${returnData}`)
+
+    // console.log(returnData);
+    // console.log(array.length);
+    // console.log(array[0].main.temp_max);
+    for (let i=0; i<array.length; i++) {
+        if (array[i].main.temp_max > max) {
+            max = array[i].main.temp_max;
+            // console.log(`for-loop temp_max is ${array[i].main.temp_max}`);
+        }
+        desc = array[i].weather[0].description;
+        // console.log(array[i].weather[0].description);
+
+        icon = array[i].weather[0].icon;
+        // console.log(array[i].weather[0].description);
+    };
+
+    returnData[0] = icon;
+    returnData[1] = getFullDate(dateString);
+    returnData[2] = desc;
+    returnData[3] = max.toFixed(0);
+    // console.log(`FINAL returnData values: ${returnData}`);
+    return returnData;
+};
 
 function getFullDate(dt) {
     const day = new Date(dt);
@@ -160,8 +212,6 @@ function getFullDate(dt) {
 
     return day.toLocaleString("en-us", options);
 }
-
-
 
 
 apiFetch(weatherUrl);
