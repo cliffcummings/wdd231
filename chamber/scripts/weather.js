@@ -49,6 +49,8 @@ function displayCurrentWeather(data) {
     // const iconsrc = 'https://openweathermap.org/img/wn/02d@2x.png';
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('alt', data.weather[0].description);
+    weatherIcon.setAttribute('width', 140);
+    weatherIcon.setAttribute('height', 140);
 };
 
 // Select forecast HTML elements in the document
@@ -96,6 +98,8 @@ function displayForecast(data) {
     const iconsrc1 = `https://openweathermap.org/img/wn/${day1[0]}@2x.png`;
     day1Icon.setAttribute('src', iconsrc1);
     day1Icon.setAttribute('alt', day1[1]);
+    day1Icon.setAttribute('width', 140);
+    day1Icon.setAttribute('height', 140);
     day1Date.innerHTML = `${day1[1]}`;
     day1Desc.innerHTML = `${day1[2]}`;
     day1Temp.innerHTML = `High: ${day1[3]}&deg;F`;
@@ -103,6 +107,8 @@ function displayForecast(data) {
     const iconsrc2 = `https://openweathermap.org/img/wn/${day2[0]}@2x.png`;
     day2Icon.setAttribute('src', iconsrc2);
     day2Icon.setAttribute('alt', day2[1]);
+    day2Icon.setAttribute('width', 140);
+    day2Icon.setAttribute('height', 140);
     day2Date.innerHTML = `${day2[1]}`;
     day2Desc.innerHTML = `${day2[2]}`;
     day2Temp.innerHTML = `High: ${day2[3]}&deg;F`;
@@ -110,6 +116,8 @@ function displayForecast(data) {
     const iconsrc3 = `https://openweathermap.org/img/wn/${day3[0]}@2x.png`;
     day3Icon.setAttribute('src', iconsrc3);
     day3Icon.setAttribute('alt', day3[1]);
+    day3Icon.setAttribute('width', 140);
+    day3Icon.setAttribute('height', 140);
     day3Date.innerHTML = `${day3[1]}`;
     day3Desc.innerHTML = `${day3[2]}`;
     day3Temp.innerHTML = `High: ${day3[3]}&deg;F`;
