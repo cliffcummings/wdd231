@@ -53,24 +53,25 @@ function displayCurrentWeather(data) {
     weatherIcon.setAttribute('height', 140);
 };
 
-// Select forecast HTML elements in the document
-let day1Date = doc.querySelector('#date1');
-let day1Temp = doc.querySelector('#temp1');
-let day1Icon = doc.querySelector('#icon1');
-let day1Desc = doc.querySelector('#fig1');
-
-let day2Date = doc.querySelector('#date2');
-let day2Temp = doc.querySelector('#temp2');
-let day2Icon = doc.querySelector('#icon2');
-let day2Desc = doc.querySelector('#fig2');
-
-let day3Date = doc.querySelector('#date3');
-let day3Temp = doc.querySelector('#temp3');
-let day3Icon = doc.querySelector('#icon3');
-let day3Desc = doc.querySelector('#fig3');
-
 function displayForecast(data) {
     console.log("displayForecast function called");
+        
+    // Select forecast HTML elements in the document
+    let day1Date = doc.querySelector('#date1');
+    let day1Temp = doc.querySelector('#temp1');
+    let day1Icon = doc.querySelector('#icon1');
+    let day1Desc = doc.querySelector('#fig1');
+
+    let day2Date = doc.querySelector('#date2');
+    let day2Temp = doc.querySelector('#temp2');
+    let day2Icon = doc.querySelector('#icon2');
+    let day2Desc = doc.querySelector('#fig2');
+
+    let day3Date = doc.querySelector('#date3');
+    let day3Temp = doc.querySelector('#temp3');
+    let day3Icon = doc.querySelector('#icon3');
+    let day3Desc = doc.querySelector('#fig3');
+
     // console.log(data);
     dateArray = createDatesArray();
     const arrayFromObject = Object.values(data.list); 
@@ -92,8 +93,6 @@ function displayForecast(data) {
     console.log(day2[1]);
     console.log(day3[1]);
     // day1Temp.innerHTML = day1[1];
-
-
 
     const iconsrc1 = `https://openweathermap.org/img/wn/${day1[0]}@2x.png`;
     day1Icon.setAttribute('src', iconsrc1);
@@ -147,18 +146,10 @@ function createDatesArray () {
     }
     return dateArray;
 };
-   
-// To prove dates are working, uncomment the next four lines
-// const today = new Date();
-// let future = new Date();
-// future = formatDate(future.setDate(today.getDate() + 30)); // Add 30 days
-// console.log(`SHOWING DAY+30: ${future}`);
-
-// console.log(`Today's dt_txt is ${data.list[0].dt_txt} ::: Tomorrow is ${dateArray[1]}`);
     
+function filterArray(array, requestedDate) {
 // Process array items searching for matching dates and 
 // store them into the filtered array
-function filterArray(array, requestedDate) {
     // console.log(array);
     // console.log(requestedDate);
     const filteredArray = array.filter((item) => {
