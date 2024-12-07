@@ -10,9 +10,9 @@ const myLong = "-111.6669845143336";
 const weatherUrl  = `https://api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLong}&appid=${myKey}&units=imperial`;
 const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLong}&appid=${myKey}&units=imperial`;
 
+async function apiFetch(url) {
 // First:  await fetch(weatherUrl);      for the web page to responsd
 // Second: await response.json(); for the web page to send us the requested data
-async function apiFetch(url) {
     try {
         const response = await fetch(url);
         if (response.ok) {
@@ -46,31 +46,19 @@ function displayCurrentWeather(data) {
     currentTemp.innerHTML = `${data.main.temp.toFixed(0)}&deg;F`;
 
     const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    // const iconsrc = 'https://openweathermap.org/img/wn/02d@2x.png';
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('alt', data.weather[0].description);
-    weatherIcon.setAttribute('width', 140);
-    weatherIcon.setAttribute('height', 140);
+    weatherIcon.setAttribute('width', 100);
+    weatherIcon.setAttribute('height', 100);
 };
 
 function displayForecast(data) {
     console.log("displayForecast function called");
         
-    // Select forecast HTML elements in the document
-    let day1Date = doc.querySelector('#date1');
-    let day1Temp = doc.querySelector('#temp1');
-    let day1Icon = doc.querySelector('#icon1');
-    let day1Desc = doc.querySelector('#fig1');
-
-    let day2Date = doc.querySelector('#date2');
-    let day2Temp = doc.querySelector('#temp2');
-    let day2Icon = doc.querySelector('#icon2');
-    let day2Desc = doc.querySelector('#fig2');
-
-    let day3Date = doc.querySelector('#date3');
-    let day3Temp = doc.querySelector('#temp3');
-    let day3Icon = doc.querySelector('#icon3');
-    let day3Desc = doc.querySelector('#fig3');
+    // Select forecast-id HTML elements in the document
+    let day1Div = doc.querySelector('#forecast1');
+    let day2Div = doc.querySelector('#forecast2');
+    let day3Div = doc.querySelector('#forecast3');
 
     // console.log(data);
     dateArray = createDatesArray();
@@ -82,44 +70,19 @@ function displayForecast(data) {
 
     let day1 = returnDayInfo(filteredDay1, dateArray[1]);
     console.log(`Day 1 INFO is: ${day1}`);
+    day1Div.innerHTML = createForecastCard(day1);
 
     let day2 = returnDayInfo(filteredDay2, dateArray[2]);
     console.log(`Day 2 INFO is: ${day2}`);
+    day2Div.innerHTML = createForecastCard(day2);
 
     let day3 = returnDayInfo(filteredDay3, dateArray[3]);
     console.log(`Day 3 INFO is: ${day3}`);
+    day3Div.innerHTML = createForecastCard(day3);
 
-    console.log(day1[3]);
+    console.log(day1[1]);
     console.log(day2[1]);
     console.log(day3[1]);
-    // day1Temp.innerHTML = day1[1];
-
-    const iconsrc1 = `https://openweathermap.org/img/wn/${day1[0]}@2x.png`;
-    day1Icon.setAttribute('src', iconsrc1);
-    day1Icon.setAttribute('alt', day1[1]);
-    day1Icon.setAttribute('width', 140);
-    day1Icon.setAttribute('height', 140);
-    day1Date.innerHTML = `${day1[1]}`;
-    day1Desc.innerHTML = `${day1[2]}`;
-    day1Temp.innerHTML = `High: ${day1[3]}&deg;F`;
-
-    const iconsrc2 = `https://openweathermap.org/img/wn/${day2[0]}@2x.png`;
-    day2Icon.setAttribute('src', iconsrc2);
-    day2Icon.setAttribute('alt', day2[1]);
-    day2Icon.setAttribute('width', 140);
-    day2Icon.setAttribute('height', 140);
-    day2Date.innerHTML = `${day2[1]}`;
-    day2Desc.innerHTML = `${day2[2]}`;
-    day2Temp.innerHTML = `High: ${day2[3]}&deg;F`;
-
-    const iconsrc3 = `https://openweathermap.org/img/wn/${day3[0]}@2x.png`;
-    day3Icon.setAttribute('src', iconsrc3);
-    day3Icon.setAttribute('alt', day3[1]);
-    day3Icon.setAttribute('width', 140);
-    day3Icon.setAttribute('height', 140);
-    day3Date.innerHTML = `${day3[1]}`;
-    day3Desc.innerHTML = `${day3[2]}`;
-    day3Temp.innerHTML = `High: ${day3[3]}&deg;F`;
 }  
 
 function formatDate (date) {
@@ -212,14 +175,14 @@ function getFullDate(dt) {
     return day.toLocaleString("en-us", options);
 }
 
-function createForecastCard(date, temp, desc, icon) {
-    return `<section class="forcast-card">
-    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${desc}" width="100" height="100">
+function createForecastCard(info) {
+    return `<section">
+    <img src="https://openweathermap.org/img/wn/${info[0]}@2x.png" alt="${info[2]}" width="100" height="100">
     <div>
-    <h4>${date}</h4>
-    <p class="weather-desc">${desc}</p>
-    <p>High: ${temp}&deg;F</p>
-    <div>
+    <h4>${info[1]}</h4>
+    <p class="weather-desc">${info[2]}</p>
+    <p>High: ${info[3]}&deg;F</p>
+    </div>
     </section>`
 };
 
