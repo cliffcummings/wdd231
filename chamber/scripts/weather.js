@@ -33,23 +33,19 @@ async function apiFetch(url) {
     }
 };
 
-// Select current weather HTML elements in the document
-let captionDesc = doc.querySelector('figcaption');
-let currentTemp = doc.querySelector('#current-temp');
-let weatherIcon = doc.querySelector('#weather-icon');
-
 function displayCurrentWeather(data) {
     console.log("displayCurrentWeather function called");
-    console.log(data);
-    console.log("data displayed above");
-    captionDesc.innerHTML = data.weather[0].description;
-    currentTemp.innerHTML = `${data.main.temp.toFixed(0)}&deg;F`;
+    // console.log(data);
 
-    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    weatherIcon.setAttribute('src', iconsrc);
-    weatherIcon.setAttribute('alt', data.weather[0].description);
-    weatherIcon.setAttribute('width', 100);
-    weatherIcon.setAttribute('height', 100);
+    let todayDiv = doc.querySelector('#weather1');
+    todayDiv.innerHTML = `<section">
+    <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}" width="100" height="100">
+    <div>
+    <p>The current temperature in Provo, Utah is</p>
+    <h3>${data.main.temp.toFixed(0)}&deg;F</h3>
+    <p>${data.weather[0].description}</p>
+    </div>
+    </section>`;
 };
 
 function displayForecast(data) {
@@ -69,20 +65,20 @@ function displayForecast(data) {
     // console.log(filteredDay1);
 
     let day1 = returnDayInfo(filteredDay1, dateArray[1]);
-    console.log(`Day 1 INFO is: ${day1}`);
+    // console.log(`Day 1 INFO is: ${day1}`);
     day1Div.innerHTML = createForecastCard(day1);
 
     let day2 = returnDayInfo(filteredDay2, dateArray[2]);
-    console.log(`Day 2 INFO is: ${day2}`);
+    // console.log(`Day 2 INFO is: ${day2}`);
     day2Div.innerHTML = createForecastCard(day2);
 
     let day3 = returnDayInfo(filteredDay3, dateArray[3]);
-    console.log(`Day 3 INFO is: ${day3}`);
+    // console.log(`Day 3 INFO is: ${day3}`);
     day3Div.innerHTML = createForecastCard(day3);
 
-    console.log(day1[1]);
-    console.log(day2[1]);
-    console.log(day3[1]);
+    // console.log(day1[1]);
+    // console.log(day2[1]);
+    // console.log(day3[1]);
 }  
 
 function formatDate (date) {
@@ -105,7 +101,7 @@ function createDatesArray () {
     const dateArray = [];
     for (i=0; i<4; i++ ){
         dateArray[i] = formatDate(newday.setDate(today.getDate() + i));
-        console.log(`SHOWING dateArray[${i}]: ${dateArray[i]}`);
+        // console.log(`SHOWING dateArray[${i}]: ${dateArray[i]}`);
     }
     return dateArray;
 };
