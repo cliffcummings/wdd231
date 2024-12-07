@@ -83,15 +83,3 @@ const listButton = doc.querySelector('#select_list');
 
 let gridChoice = "grid";
 console.log("SETTING DEFAULT: grid mode");
-
-gridButton.addEventListener('click', () => {
-    console.log("gridButton clicked");
-    gridChoice = "grid";
-    cards.setAttribute('class', gridChoice);
-});
-
-listButton.addEventListener('click', () => {
-    console.log("listButton clicked");
-    gridChoice = "list";
-    cards.setAttribute('class', gridChoice);
-});
