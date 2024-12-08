@@ -81,7 +81,7 @@ nav {
 }
 
 ul.menuLinks li a {
-    border: 1px dashed pink;
+    /* border: 1px dashed pink; */
     display: block;
     padding: .75rem 1vw;
     color: #fff;
@@ -155,7 +155,7 @@ main {
 #buss {
     padding: 0 1rem;
     grid-column: 1 / 4;
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .events {

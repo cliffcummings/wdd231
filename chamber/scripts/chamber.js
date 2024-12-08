@@ -16,13 +16,15 @@ async function getBusinessData() {
         console.log("AWAITING RESPONSE data");
         console.table(data.companies);
 
-        console.log(`STEP 1`);
-        let newList = createGoldSilverArray(data.companies);
-        console.table(newList);
-        console.log(`STEP 2`);
-
-        displayBusinesses(data.companies);
-    }
+        if (spotlight == true) {
+            let newList = createGoldSilverArray(data.companies);
+            console.table(newList);
+            let randList = create3RandomBusinesses(newList);
+            displayBusinesses(randList);
+        } else {
+            displayBusinesses(data.companies);
+        };
+    };
 }   
 
 const displayBusinesses = (companies) => {
@@ -97,19 +99,14 @@ function createGoldSilverArray(companies) {
 };
 
 function create3RandomBusinesses(array) {
-    const length = array.length;
-    const businesses = [];
-    let randomChoice = "";
+    // Using Fisher-Yates shuffle algorithm for unique random values
+    let businesses = [];
 
-    for (let i = 0; i < 3; i++) {
-        do {
-            const randomIndex = Math.floor(Math.random() * (length));
-            randomChoice = array[randomIndex];
-        } while ((businesses.includes(randomChoice)))
-
-        businesses.push(randomChoice);
+    for (let i = array.length -1; i>0; i--) {
+        const j = Math.floor(Math.random() * (i+1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
 
-    const business = businesses.map((item) => cardSpotlightTemplate(item))
-    document.querySelector(".spotlight").innerHTML = business.join("");
+    businesses = array.slice(0,3);
+    return businesses;
 }
