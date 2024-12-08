@@ -1,8 +1,3 @@
-hamburgerElement.addEventListener('click', () => {
-    navElement.classList.toggle('open');
-    hamburgerElement.classList.toggle('open');
-});
-
 gridButton.addEventListener('click', () => {
     console.log("gridButton clicked");
     gridChoice = "grid";

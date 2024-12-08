@@ -72,7 +72,8 @@ button {
 }
 
 #myButton::before {
-    content: "\2630";
+    /* content: "\2630"; */
+    content: "≡";
 }
 
 /* HEADER - NAVIGATION STUFF HERE */

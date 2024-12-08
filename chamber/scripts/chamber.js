@@ -110,3 +110,8 @@ function create3RandomBusinesses(array) {
     businesses = array.slice(0,3);
     return businesses;
 }
+
+hamburgerElement.addEventListener('click', () => {
+    navElement.classList.toggle('open');
+    hamburgerElement.classList.toggle('open');
+});
