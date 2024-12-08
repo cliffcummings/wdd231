@@ -1,3 +1,6 @@
+// -------------------------------------------
+// Footer Year and Modification Date 
+
 let yr = new Date().getFullYear();
 let lastModified = document.lastModified;
 let author = "Provo";

@@ -1,12 +1,7 @@
 const doc = document;
-const hamburgerElement = doc.querySelector('#myButton');
-// const navElement = doc.querySelector('.menuLinks');
-const navElement = doc.querySelector('#animateme');
-
-hamburgerElement.addEventListener('click', () => {
-    navElement.classList.toggle('open');
-    hamburgerElement.classList.toggle('open');
-});
+const hamburgerElement = document.querySelector('#myButton');
+// const navElement = document.querySelector('.menuLinks');
+const navElement = document.querySelector('#animateme');
 
 const membersURL = 'data/members.json';
 const cards = document.querySelector('#cards');
@@ -19,7 +14,12 @@ async function getBusinessData() {
     if (response.ok) {
         const data = await response.json();
         console.log("AWAITING RESPONSE data");
-        // console.table(data.companies);
+        console.table(data.companies);
+
+        console.log(`STEP 1`);
+        let newList = createGoldSilverArray(data.companies);
+        console.table(newList);
+        console.log(`STEP 2`);
 
         displayBusinesses(data.companies);
     }
@@ -36,13 +36,13 @@ const displayBusinesses = (companies) => {
     companies.forEach((company) => {
         // console.table(company);
         // Create elements to add to the div.cards element
-        let card = doc.createElement('section');
-        let h2 = doc.createElement('h2');
-        let level = doc.createElement('p');
-        let address = doc.createElement('p');
-        let web = doc.createElement('p');
-        let phone = doc.createElement('p');
-        let logo = doc.createElement('img');
+        let card = document.createElement('section');
+        let h2 = document.createElement('h2');
+        let level = document.createElement('p');
+        let address = document.createElement('p');
+        let web = document.createElement('p');
+        let phone = document.createElement('p');
+        let logo = document.createElement('img');
           
         // Build the h2 content out to show company name and level
         h2.innerHTML = `${company.name}`;
@@ -78,8 +78,38 @@ const displayBusinesses = (companies) => {
   }
 
 // Shortened names for EventListeners
-const gridButton = doc.querySelector('#select_grid');
-const listButton = doc.querySelector('#select_list');
+const gridButton = document.querySelector('#select_grid');
+const listButton = document.querySelector('#select_list');
 
 let gridChoice = "grid";
 console.log("SETTING DEFAULT: grid mode");
+
+function createGoldSilverArray(companies) {
+    console.log("Going to create GoldSilver array");
+
+    let goldSilver = [];
+    companies.forEach((company) => {
+        if (company.memberLevel>1)
+            goldSilver.push(company);
+    });
+    console.log(goldSilver);
+    return goldSilver;
+};
+
+function create3RandomBusinesses(array) {
+    const length = array.length;
+    const businesses = [];
+    let randomChoice = "";
+
+    for (let i = 0; i < 3; i++) {
+        do {
+            const randomIndex = Math.floor(Math.random() * (length));
+            randomChoice = array[randomIndex];
+        } while ((businesses.includes(randomChoice)))
+
+        businesses.push(randomChoice);
+    }
+
+    const business = businesses.map((item) => cardSpotlightTemplate(item))
+    document.querySelector(".spotlight").innerHTML = business.join("");
+}
