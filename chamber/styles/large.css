@@ -60,12 +60,12 @@
         height: 100%;
     }
 
-    #forecast h2 {
-        grid-column: 1 / 4;
-    }
-
     /* For DEBUG testing
     .TODO {
         display: flex;
     } */
+     
+    #forecast h2 {
+        grid-column: 1 / 4;
+    }
 }
