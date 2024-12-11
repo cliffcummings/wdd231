@@ -179,6 +179,21 @@ main {
     background-color: var(--back_color4);
 }
 
+#joingrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#openButton {background-color: aqua;}
+
+#dialogBox {background-color: lavender;}
+
+#closeButton {background-color: violet;}
+
+::backdrop {
+    background-color: rgba(255, 128, 0, 0.5);
+}
+
 /* HERO IMAGE & JOIN BUTTON */
 
 .hero-image {

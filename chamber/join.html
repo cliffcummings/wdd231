@@ -58,76 +58,86 @@
     </nav>
 
     <main>
-        <!-- <div class="hero">
-            <div class="hero-text join-action">
-                <a href="join.html">Join the Chamber of Commerce</a>
-            </div>
-        </div> -->
 
         <div>
             <h1>Join</h1>
         </div>
+        
+        <div id="joingrid">
+            <section id="form">
+                <h2>Join The Chamber of Commerce</h2>
+                <p><span class="required">*</span> Indicates a required field.</p>
 
-        <section id="form">
-            <h2>Join The Chamber of Commerce</h2>
-            <p><span class="required">*</span> Indicates a required field.</p>
+                <form method="GET" action="thanks.html" onsubmit="getTimestamp">
+                    <fieldset>
+                        <legend>Membership Application Form</legend>
+                        <div class="form-item firstname">
+                            <span class="required">*</span>
+                            <label for="firstname">First Name:</label><p>
+                            <input type="text" id="firstname" name="firstname" 
+                            autocomplete="given-name" required><br>
+                        </p></div>
+                        <div class="form-item lastname">
+                            <span class="required">*</span>
+                            <label for="lastname">Last Name:</label><p>
+                            <input type="text" id="lastname" name="lastname" 
+                            autocomplete="family-name" required><br>
+                        </p></div>                    
+                        <div class="form-item orgtitle">
+                            <label for="orgtitle">Organization Title:</label><p>
+                            <input type="text" id="orgtitle" name="orgtitle" placeholder="Title" pattern="[a-zA-Z0-9- ]]*"
+                            autocomplete="organization-title"><br>
+                        </p></div>
+                        <div class="form-item email">
+                            <span class="required">*</span>
+                            <label for="email">email Address:</label><p>
+                            <input type="email" id="email" name="email"
+                            autocomplete="email" required><br>
+                        </p></div>                    
+                        <div class="form-item mobile">
+                            <span class="required">*</span>
+                            <label for="mobile">Mobile Phone Number:</label><p>
+                            <input type="tel" id="mobile" name="mobile" placeholder="123-456-6789" pattern="[0-9]{3}[-]*[0-9]{3}[-]*[0-9]{4}"
+                            autocomplete="tel" required><br>
+                        </p></div>
+                        <div class="form-item orgname">
+                            <span class="required">*</span>
+                            <label for="orgname">Business/Organization's Name:</label><p>
+                            <input type="text" id="orgname" name="orgname" 
+                            autocomplete="organization" required><br>
+                        </p></div>
 
-            <form method="GET" action="thanks.html" onsubmit="getTimestamp">
-                <fieldset>
-                    <legend>Membership Application Form</legend>
-                    <div class="form-item firstname">
-                        <span class="required">*</span>
-                        <label for="firstname">First Name:</label><p>
-                        <input type="text" id="firstname" name="firstname" required><br>
-                    </p></div>
-                    <div class="form-item lastname">
-                        <span class="required">*</span>
-                        <label for="lastname">Last Name:</label><p>
-                        <input type="text" id="lastname" name="lastname" required><br>
-                    </p></div>                    
-                    <div class="form-item orgtitle">
-                        <label for="orgtitle">Organization Title:</label><p>
-                        <input type="text" id="orgtitle" name="orgtitle"><br>
-                    </p></div>
-                    <div class="form-item email">
-                        <span class="required">*</span>
-                        <label for="email">email Address:</label><p>
-                        <input type="email" id="email" name="email" required><br>
-                    </p></div>                    
-                    <div class="form-item mobile">
-                        <span class="required">*</span>
-                        <label for="mobile">Mobile Phone Number:</label><p>
-                        <input type="tel" id="mobile" name="mobile" required><br>
-                    </p></div>
-                    <div class="form-item orgname">
-                        <span class="required">*</span>
-                        <label for="orgname">Business/Organization's Name:</label><p>
-                        <input type="text" id="orgname" name="orgname" required><br>
-                    </p></div>
+                        <div class="form-item column1">
+                            <label for="level">Membership Level:</label><p>
+                            <select class="option" name="level" id="level">
+                            <option value="nonp">NP Membership</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                            </select>
+                        </p></div>
 
-                    <div class="form-item column1">
-                        <label for="level">Membership Level:</label><p>
-                        <select class="option" name="level" id="level">
-                          <option value="nonp">NP Membership</option>
-                          <option value="bronze">Bronze Membership</option>
-                          <option value="silver">Silver Membership</option>
-                          <option value="gold">Gold Membership</option>
-                        </select>
-                    </p></div>
-
-                    <label class="desc" for="feedback">Business Description:</label><p>
-                        <textarea id="feedback" name="feedback" rows="4" placeholder="Your business description here"></textarea>
-                        
-                    <input type="hidden" name="timestamp" id="timestamp">
-                </fieldset>
-    
-                <div>
-                    <input type="submit" value="Submit Chamber of Commerce Application">
-                </div>
-    
-            </form>
-        </section>
-
+                        <label class="desc" for="feedback">Business Description:</label><p>
+                            <textarea id="feedback" name="feedback" rows="4" placeholder="Your business description here"></textarea>
+                            
+                        <input type="hidden" name="timestamp" id="timestamp">
+                    </fieldset>
+        
+                    <div>
+                        <input type="submit" value="Submit Chamber of Commerce Application">
+                    </div>
+        
+                </form>
+            </section>
+            <section id="memberlevels">
+                <h2>Membership Levels</h2>
+                <button id="openButton">More Info</button>
+                <dialog id="dialogBox">
+                    <h2>Temp Added Info</h2>
+                    <button id="closeButton">Close</button>
+                </dialog>
+            </section>
+        </div>
     </main>
 
     <footer class="container">
