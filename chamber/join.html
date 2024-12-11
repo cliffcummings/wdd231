@@ -84,9 +84,9 @@
                             autocomplete="family-name" required><br>
                         </p></div>                    
                         <div class="form-item orgtitle">
-                            <label for="orgtitle">Organization Title:</label><p>
-                            <input type="text" id="orgtitle" name="orgtitle" placeholder="Title" pattern="[a-zA-Z0-9- ]]*"
-                            autocomplete="organization-title"><br>
+                            <label for="orgtitle">Title:</label><p>
+                            <input type="text" id="orgtitle" name="orgtitle" pattern="[a-zA-Z0-9\-\s]{7,}"
+                            autocomplete="organization-title" required><br>
                         </p></div>
                         <div class="form-item email">
                             <span class="required">*</span>
