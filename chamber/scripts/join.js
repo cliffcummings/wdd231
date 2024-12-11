@@ -20,6 +20,7 @@ thankyou.innerHTML = `
     <p>Your Phone: ${show("mobile")}</p>
     <p>Your Email: <a href="${show("email")}"> ${show("email")}</a></p>
     <p>Business/Organization: ${show("orgname")}</p>
+    <p>${show("timestamp")}</p>
     `
 // <p>${show("timestamp")}</p>
 
@@ -35,11 +36,19 @@ function show(info) {
             // result=result[1];
             // result=result.replace("%40","@");
             // console.log(result);
-            // result = item.split("=")[1].replace("%40", "@").replaceAll("%3A", ":").replaceAll("+", " ").replaceAll("%28", "(").replaceAll("%29", ")");
+            // result = element.split("=")[1].replace("%40", "@").replaceAll("%3A", ":").replaceAll("+", " ").replaceAll("%28", "(").replaceAll("%29", ")");
         }
     });
     return (result);
 }
 
+const form = document.querySelector('form');
+form.onsubmit = getTimestamp();
 
-show("firstname");
+function getTimestamp() {
+    const now = new Date();
+    console.log(now.toString());
+    document.querySelector("#timestamp").value = now.toString();
+}
+
+// show("firstname");

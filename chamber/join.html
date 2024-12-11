@@ -72,7 +72,7 @@
             <h2>Join The Chamber of Commerce</h2>
             <p><span class="required">*</span> Indicates a required field.</p>
 
-            <form method="GET" action="thanks.html">
+            <form method="GET" action="thanks.html" onsubmit="getTimestamp">
                 <fieldset>
                     <legend>Membership Application Form</legend>
                     <div class="form-item firstname">
@@ -117,8 +117,9 @@
 
                     <label class="desc" for="feedback">Business Description:</label><p>
                         <textarea id="feedback" name="feedback" rows="4" placeholder="Your business description here"></textarea>
-
-                    </fieldset>
+                        
+                    <input type="hidden" name="timestamp" id="timestamp">
+                </fieldset>
     
                 <div>
                     <input type="submit" value="Submit Chamber of Commerce Application">
