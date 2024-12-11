@@ -1,4 +1,4 @@
-const url="../data/memberLevels.json";
+const url="data/memberLevels.json";
 
 // const openButton = document.querySelector("#openButton");
 const dialogBox = document.querySelector("#dialogBox");
