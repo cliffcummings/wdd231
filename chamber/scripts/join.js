@@ -2,18 +2,12 @@ const url="data/memberLevels.json";
 
 // const openButton = document.querySelector("#openButton");
 const dialogBox = document.querySelector("#dialogBox");
+const dialogH2 = document.querySelector("#dialogBox h2");
 const closeButton = document.querySelector("#closeButton");
 
 const memberLevel = document.querySelector("#memberlevels");
 
-// openButton.addEventListener("click", () => {
-//     console.log("openButton clicked");
-//     dialogBox.showModal();
-// });
-
-// closeButton.addEventListener("click", () => {
-//     dialogBox.close();
-// });
+closeButton.addEventListener("click", () => dialogBox.close());
 
 async function apiFetch(url) {
 // First:  await fetch(weatherUrl);      for the web page to responsd
@@ -58,21 +52,17 @@ function displayMemberInfo(data) {
 function displayLevelDetails(item) {
     console.log("This displayLevelsData One!");
     console.log(item);
-    dialogBox.innerHTML = `
+    dialogH2.innerHTML = `${item.name}`;
+    const memberInfo = document.createElement("p");
+    memberInfo.innerHTML = `${item.benefits}`;
+    dialogBox.appendChild(memberInfo);
+
+    /*dialogBox.innerHTML = `
     <h4>${item.name}</h4>
     <button id="closeButton">Close</button>
-    `;
+    `;*/
     dialogBox.showModal();
-    // dialogBox.scrollTop = 0;
-    // closeButton.addEventListener("click", () => {
-    //     console.log("Close button selected");
-    //     dialogBox.close();
-    // });
+
 };
 
 apiFetch(url);
-
-closeButton.addEventListener("click", () => {
-    console.log("Close button selected")
-    dialogBox.close();
-});

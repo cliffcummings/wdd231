@@ -1,4 +1,4 @@
-// const currentW = doc.querySelector('#weather');
+// const currentW = document.querySelector('#weather');
 console.log("Going to GET WEATHER data");
 
 // CREATE REQUIRED VARIABLES FOR THE WEATHER URL
@@ -37,7 +37,7 @@ function displayCurrentWeather(data) {
     console.log("displayCurrentWeather function called");
     // console.log(data);
 
-    let todayDiv = doc.querySelector('#weather1');
+    let todayDiv = document.querySelector('#weather1');
     todayDiv.innerHTML = `<section">
     <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}" width="100" height="100">
     <div>
@@ -52,9 +52,9 @@ function displayForecast(data) {
     console.log("displayForecast function called");
         
     // Select forecast-id HTML elements in the document
-    let day1Div = doc.querySelector('#forecast1');
-    let day2Div = doc.querySelector('#forecast2');
-    let day3Div = doc.querySelector('#forecast3');
+    let day1Div = document.querySelector('#forecast1');
+    let day2Div = document.querySelector('#forecast2');
+    let day3Div = document.querySelector('#forecast3');
 
     // console.log(data);
     dateArray = createDatesArray();

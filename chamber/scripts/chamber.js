@@ -1,7 +1,6 @@
-const doc = document;
-const hamburgerElement = document.querySelector('#myButton');
-// const navElement = document.querySelector('.menuLinks');
-const navElement = document.querySelector('#animateme');
+const hamburgerElement = document.querySelector('#myButton'); // TODO
+// const navElement = document.querySelector('.menuLinks'); //
+const navElement = document.querySelector('#animateme'); // TODO
 
 const membersURL = 'data/members.json';
 const cards = document.querySelector('#cards');

@@ -60,6 +60,12 @@
         height: 100%;
     }
 
+    
+    #joingrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     /* For DEBUG testing
     .TODO {
         display: flex;
