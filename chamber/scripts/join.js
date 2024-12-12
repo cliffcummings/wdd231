@@ -39,12 +39,12 @@ function displayMemberInfo(data) {
         <button>More Level Infomation</button>
         `;
 
+        memberLevel.appendChild(levelDiv);
+
         levelDiv.addEventListener("click", () => {
             console.log(item);
             displayLevelDetails(item);
         });
-
-        memberLevel.appendChild(levelDiv);
     });
 };
 
@@ -57,10 +57,12 @@ function displayLevelDetails(item) {
     memberInfo.innerHTML = `${item.benefits}`;
     dialogBox.appendChild(memberInfo);
 
-    /*dialogBox.innerHTML = `
-    <h4>${item.name}</h4>
-    <button id="closeButton">Close</button>
-    `;*/
+    // dialogBox.innerHTML = `
+    // <h4>${item.name}</h4>
+    // <p>${item.name}</p>
+    // <button id="closeButton">Close</button>
+    // `;
+
     dialogBox.showModal();
 
 };
