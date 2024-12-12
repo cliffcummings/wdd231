@@ -52,15 +52,15 @@ header, body {
 header {
     display: flex;
 }
-
+/* 
 header a {
     color: #fff;
-}
+} */
 
-header a:hover {
+/* header a:hover {
     background-color: var(--back_color1);
     color: var(--active_yellow);
-}
+} */
 
 h1 {
     font-size: 1.5rem;
@@ -74,6 +74,7 @@ button {
 #myButton::before {
     /* content: "\2630"; */
     content: "≡";
+    background-color: var(--back_color2);
 }
 
 /* HEADER - NAVIGATION STUFF HERE */
@@ -89,9 +90,9 @@ ul.menuLinks li a {
     text-decoration: none;
 }
 
-li.current-menu-item a {
+/* li.current-menu-item a {
     background: rgba(0,0,0,0.2);
-}
+} */
 
 ul.menuLinks {
     list-style-type: none; 
@@ -117,7 +118,7 @@ nav.open {
  /* HEADER - HAMBURGER BUTTON SETTINGS */
  #myButton {
     font-size: 2rem;
-    background: none;
+    background-color: var(--back_color2);
     border: none;
     color: #fff;
     cursor: pointer;
