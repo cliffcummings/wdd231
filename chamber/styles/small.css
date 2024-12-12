@@ -193,8 +193,8 @@ main {
 
 .np {
     border: 5px solid var(--back_color2);
-    padding: 3vw;
-    margin: 1rem;
+    padding: 1vw;
+    margin: 1px;
     animation-name: np;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -208,8 +208,8 @@ main {
 
 .bronze {
     border: 5px solid var(--back_color2);
-    padding: 3vw;
-    margin: 1rem;
+    padding: 1vw;
+    margin: 1px;
     animation-name: bronze;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -223,8 +223,8 @@ main {
 
 .silver {
     border: 5px solid var(--back_color2);
-    padding: 3vw;
-    margin: 1rem;
+    padding: 1vw;
+    margin: 1px;
     animation-name: silver;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -238,8 +238,8 @@ main {
 
 .gold {
     border: 5px solid var(--back_color2);
-    padding: 3vw;
-    margin: 1rem;
+    padding: 1vw;
+    margin: 1px;
     animation-name: gold;
     animation-duration: 1s;
     animation-direction: alternate;
