@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="WDD231 W05 Chamber Discover Page">
+    <meta name="author" content="Cliff Cummings">
+
+    <!-- social media meta tags -->
+    <meta property="og:title" content="WDD231 W05 Chamber Discover Page">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="WDD231 W05 Chamber Discover Page developed by Cliff Cummings.">
+    <meta property="og:image"
+        content="https://cliffcummings.github.io/wdd231/chamber/images/1024px-Mount_Timpanogos_1024_350.webp">
+    <meta property="og:url" content="https://cliffcummings.github.io/wdd231/chamber/directory.html#">
+
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+
+    <title>WDD231 Discover Page - Cliff Cummings</title>
+</head>
+
+<body>
+    <header class=".container">
+        <div>
+            <img src="./images/UVChamber_100_74.png" alt="UV Chamber Logo" width="100" height="74">
+        </div>
+        <div class="pad">
+            <h1>Utah Valley - Chamber of Commerce</h1>
+        </div>
+        <button id="myButton" aria-label="Hamburger Menu"></button>
+    </header>
+
+    <nav id="animateme">
+        <ul class="menuLinks">
+            <li><a href="index.html" title="Home">Home</a></li>
+            <li class="current-menu-item"><a href="discover.html" title="Discover">Discover</a></li>
+            <li><a href="directory.html" title="Businesses">Business Directory</a></li>
+            <li><a href="join.html" title="Join the Chamber of Commerce">Join</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h1>Discover</h1>
+        </div>
+
+        <div id="joingrid">
+            <section class="discovery">
+                <h2><a href="https://www.utahcounty.gov/fun-facts">Utah County Information</a></h2>
+
+                <div>
+                    <h3>About Utah County</h3>
+                    <p><b>Population</b> (approximate): 685,000</p>
+                    <p><b>Utah County Size</b> 2,142 sq. milea</p>
+                    <p><b>Population Density</b> 258 individuals per square mile</p>
+                    <p><b>Valley Elevations</b> 4,480 - 4,700 ft above sea level</p>
+                    <p><b>Highest Peak</b> Mt. Nebo at 11,928 ft above sea level</p>
+                </div>
+                <div>
+                    <h3>Origins and Name</h3>
+                    <p>
+                        The name "Utah" is a nod to the region's indigenous roots.
+                        Derived from the Native American "Ute" tribe, it translates
+                        to 'people of the mountains'.
+                    </p>
+                </div>
+
+            </section>
+
+            <section class="sights">
+                <img src="images/ProvoTemple_960_660.webp" alt="Provo City Center Temple" loading="lazy">
+                <p>Provo City Center Temple</p>
+
+                <img src="images/ProvoCityHall_600_400.webp" alt="Provo City Hall" loading="lazy">
+                <p>Provo City Hall</p>
+
+                <img src="images/LE_Stadium_500_280.webp" alt="BYU Stadium" loading="lazy">
+                <p>BYU Lavell Edwards Stadium (LES)</p>
+
+                <img src="images/ThanksgivingPoint_500_280.webp" alt="Thnksgiving Point Museum" loading="lazy">
+                <p>Mountain America Museum of Ancient Life at Thanksgiving Point</p>
+
+                <img src="images/EvermorePark_760_506.webp" alt="Evermore Park" loading="lazy">
+                <p>Evermore Park, Pleasant Grove</p>
+
+                <img src="images/TimpCaves_500_280.webp" alt="Timpanogos Caves" loading="lazy">
+                <p>Timpanogos Cave National Monument</p>
+
+                <img src="images/Peaks_IceArena_500_280.webp" alt="Peaks Ice Arena" loading="lazy">
+                <p>Peaks Ice Arena, Provo</p>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="container">
+        <div>
+            <img src="./images/UVChamber_100_74.png" alt="UV Chamber Logo" width="100" height="74">
+            <p>Provo</p>
+            <p>2696 N. University Ave Suite 220</p>
+            <p>Provo UT 84604</p>
+            <p>(385) 482-2555</p>
+            <p>info@thechamber.org</p>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/uvchamber/" target="_blank">
+                <img src="images/facebook_50_50.png" alt="Facebook" width="50" height="50">
+            </a>
+            <a href="https://twitter.com/uvchamber" target="_blank">
+                <img src="images/twitter_50_50.png" alt="Twitter" width="50" height="50">
+            </a>
+            <a href="https://www.instagram.com/utah_valley_chamber/" target="_blank">
+                <img src="images/instagram_50_50.png" alt="Instagram" width="50" height="50">
+            </a>
+        </div>
+
+        <div>
+            <p>WDD 231 Class Project</p>
+            <p>Cliff Cummings</p>
+            <p id="copywrite"></p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+
+</html>
