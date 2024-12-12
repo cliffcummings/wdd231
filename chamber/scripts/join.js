@@ -2,7 +2,8 @@ const url="data/memberLevels.json";
 
 // const openButton = document.querySelector("#openButton");
 const dialogBox = document.querySelector("#dialogBox");
-const dialogH2 = document.querySelector("#dialogBox h2");
+const dialogH4 = document.querySelector("#dialogBox h4");
+const dialogP = document.querySelector("#dialogBox p");
 const closeButton = document.querySelector("#closeButton");
 
 const memberLevel = document.querySelector("#memberlevels");
@@ -35,11 +36,14 @@ function displayMemberInfo(data) {
     data.memberLevels.forEach(item => {
         const levelDiv = document.createElement("div");
         levelDiv.classList.add("card");
+        levelDiv.setAttribute("class", `${item.level}`);
+        console.log(`memberLevels: ${item.level}`);
 
         levelDiv.innerHTML = `
         <h4>${item.name}</h4>
         <button>More Level Infomation</button>
         `;
+
 
         memberLevel.appendChild(levelDiv);
 
@@ -52,23 +56,18 @@ function displayMemberInfo(data) {
 
 
 function displayLevelDetails(item) {
-    // const memberInfo = document.createElement("#memberlevels p");
-    let costStr = "";
-    costStr = `Membership Cost:     ${item.cost}`;
-    benefitsStr = `Membership Benefits: ${item.benefits}`
-    // const memberCost = document.createElement("p");
-    const memberInfo = document.createElement("p");
-
     console.log("This displayLevelsData One!");
     console.log(item);
-    dialogH2.innerHTML = `${item.name}`;
-    memberInfo.innerHTML = `
-        <p>${costStr}</p>
-        <p>${benefitsStr}</p>
-        <p>DEBUG INFO</p>
-    `;
 
-    dialogBox.appendChild(memberInfo);
+    let memberStr = `
+        <p>Membership Cost:     ${item.cost}</p>
+        <p>Membership Benefits: ${item.benefits}</p>
+        <p>------------------------------</p>
+    `;
+    console.log(`memberStr = ${memberStr}`);
+    
+    dialogH4.innerHTML = `${item.name}`;
+    dialogP.innerHTML = `${memberStr}`;
 
     // dialogBox.innerHTML = `
     // <h4>${item.name}</h4>
@@ -77,7 +76,6 @@ function displayLevelDetails(item) {
     // `;
 
     dialogBox.showModal();
-
 };
 
 apiFetch(url);
