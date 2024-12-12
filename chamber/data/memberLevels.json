@@ -1,7 +1,7 @@
 {
     "memberLevels": [
         {
-            "name": "NP Membership",
+            "name": "Non-Prophet Membership",
             "level": "np",
             "cost": "Free",
             "benefits": "Some community exposure"
@@ -22,7 +22,7 @@
             "name": "Gold Membership",
             "level": "gold",
             "cost": "$200/year",
-            "benefits": "Some community exposure"
+            "benefits": "Mega community exposure"
         }
     ]
 }

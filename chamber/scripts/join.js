@@ -6,6 +6,8 @@ const dialogH2 = document.querySelector("#dialogBox h2");
 const closeButton = document.querySelector("#closeButton");
 
 const memberLevel = document.querySelector("#memberlevels");
+// const memberInfo = document.createElement("#memberlevels p");
+
 
 closeButton.addEventListener("click", () => dialogBox.close());
 
@@ -50,11 +52,22 @@ function displayMemberInfo(data) {
 
 
 function displayLevelDetails(item) {
+    // const memberInfo = document.createElement("#memberlevels p");
+    let costStr = "";
+    costStr = `Membership Cost:     ${item.cost}`;
+    benefitsStr = `Membership Benefits: ${item.benefits}`
+    // const memberCost = document.createElement("p");
+    const memberInfo = document.createElement("p");
+
     console.log("This displayLevelsData One!");
     console.log(item);
     dialogH2.innerHTML = `${item.name}`;
-    const memberInfo = document.createElement("p");
-    memberInfo.innerHTML = `${item.benefits}`;
+    memberInfo.innerHTML = `
+        <p>${costStr}</p>
+        <p>${benefitsStr}</p>
+        <p>DEBUG INFO</p>
+    `;
+
     dialogBox.appendChild(memberInfo);
 
     // dialogBox.innerHTML = `
