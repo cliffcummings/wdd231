@@ -135,9 +135,8 @@ footer.container {
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     row-gap: 1px;
-    /* margin: 1rem 1rem; */
     max-width: 1200px;
     width: 100%;
     box-sizing: border-box;
