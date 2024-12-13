@@ -6,16 +6,31 @@ const millisecs2Days = 86400000;
 // The || [] part of the expression uses the OR operator to return
 // an empty array ([]) if JSON.parse returns null (first visit).
 //-----------------------------------------------------------------
-const lastVisit = JSON.parse(localStorage.getItem("visited")) || [];
 const todaysDate = Date.now();
+console.log(todaysDate);
+const lastVisit = JSON.parse(localStorage.getItem("visited")) || [];
 
 const message = document.querySelector(".visit-msg");
-let msg = "Welcome to your first visit to this webpage!";
+let msg = "";
 
 // Convert milliseconds to days between visits
-daysBetweenVisits = (todaysDate - lastVisit) / millisecs2Days;
+daysBetweenVisits = ((todaysDate - lastVisit) / millisecs2Days).toFixed(0);
 
-msg = `You last visited ${daysBetweenVisits.toFixed(0)} day(s) ago.`;
+console.log("Entering if-statement");
+console.log(`Last visit value ${lastVisit}`);
+// console.log(`Days between visits: ${daysBetweenVisits.toFixed(0)}`);
+
+// msg is initially set but then overridden if lastVisit.Visit.length is not 0
+// If not overridden, this is the first visit
+msg = "Welcome! Let us know if you have any questions";
+if (lastVisit.length !== 0) {
+  if (daysBetweenVisits==0) {
+    msg = "Back so soon! Awesome!";
+    } else {
+        msg = `You last visited ${daysBetweenVisits.toFixed(0)} day(s) ago.`;
+    }
+}
+
 
 message.innerHTML = msg;
 

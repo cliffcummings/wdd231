@@ -311,10 +311,15 @@ section .sights {
 }
 
 .h1-div {
-    grid-column: 1 / span 2;
+    grid-column: 1 / 2;
     text-align: center;
 }
 
+.h2-div {
+    grid-column: 2 / 3;
+    text-align: center;
+    align-self: center;
+}
 /* HERO IMAGE & JOIN BUTTON */
 
 .hero-image {
