@@ -52,15 +52,6 @@ header, body {
 header {
     display: flex;
 }
-/* 
-header a {
-    color: #fff;
-} */
-
-/* header a:hover {
-    background-color: var(--back_color1);
-    color: var(--active_yellow);
-} */
 
 h1 {
     font-size: 1.5rem;
@@ -144,9 +135,12 @@ footer.container {
 
 main {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     row-gap: 1px;
-    margin: 1rem 1rem;
+    /* margin: 1rem 1rem; */
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #home section {
@@ -272,15 +266,19 @@ main {
 
 iframe {
     margin-top: 1rem;
+    max-width: 450px;
 }
 
-#discovergrid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+.discover-sights img {
+    max-width: 500px;
 }
 
 section .discovery {
     grid-column: 1 / 2;
+}
+
+#discover-main {
+    grid-gap: 1rem;
 }
 
 .discovery div {
@@ -309,7 +307,12 @@ section .sights {
 }
 
 .sights img:hover {
-    transform: scale 1.2;
+    transform: scale(1.2);
+}
+
+.h1-div {
+    grid-column: 1 / span 2;
+    text-align: center;
 }
 
 /* HERO IMAGE & JOIN BUTTON */
