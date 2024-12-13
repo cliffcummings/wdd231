@@ -1,3 +1,6 @@
+/* NOTE: justify-content : Controls the alignment of all items on the main axis.  */
+/*       align-items     : Controls the alignment of all items on the cross axis. */
+
 @media only screen and (min-width: 650px) {
 
     #myButton {
@@ -29,11 +32,6 @@
         display: grid;
         /* grid-template-columns: 2fr 1fr 2fr; */
     }
-
-    /* #home section {
-        display: grid;
-        grid-template-columns: 2fr 1fr 2fr;
-    } */
     
     .hero .join-action {
         top: auto;
@@ -59,7 +57,6 @@
         align-content: start;
         height: 100%;
     }
-
     
     #joingrid {
         display: grid;
