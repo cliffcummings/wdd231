@@ -31,7 +31,7 @@ if (lastVisit.length !== 0) {
     }
 }
 
-
 message.innerHTML = msg;
 
+// Save the date for the most recent visit
 localStorage.setItem("visited", Date.now());

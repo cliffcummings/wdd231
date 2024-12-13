@@ -296,17 +296,13 @@ section .discovery {
     padding: 1rem;
 }
 
-section .sights {
-    grid-column: 2 / 3;
-}
-
-.sights img {
+.discover-sights img {
     width: 100%;
     height: auto;
     transition: transform 0.5s ease-in-out;
 }
 
-.sights img:hover {
+.discover-sights img:hover {
     transform: scale(1.2);
 }
 
