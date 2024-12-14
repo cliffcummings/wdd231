@@ -299,16 +299,15 @@ section .discovery {
     padding: 1rem;
 }
 
-.discover-sights img {
-    transition: transform 0.5s ease-in-out;
-}
-
+/* html: how to make image dynamically resize */
+/* https://stackoverflow.com/questions/4684304/how-can-i-resize-an-image-dynamically-with-css-as-the-browser-width-height-chang */
 .main-discover img {
     width: 100%;
     height: auto;
     transition: transform 0.5s ease-in-out;
 }
 
+/* Only transform .discover-sights images */
 .discover-sights img:hover {
     transform: scale(1.2);
 }
