@@ -87,6 +87,17 @@
     .main-discover {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        /* grid-template-columns: 1fr 1fr; */
+    }
+    
+    .main-large {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 1rem;
+    }
+
+    .companies {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-row-start: 2;
     }
 }
