@@ -25,9 +25,9 @@
 
     }
 
-    main {
+    /* main {
         grid-template-columns: 1fr 1fr;
-    }
+    } */
 
     .pad {
         margin: 1rem 0 0.5rem 0;
@@ -36,16 +36,8 @@
 
     #home {
         display: grid;
-        /* grid-template-columns: 2fr 1fr 2fr; */
+        grid-template-columns: 2fr 1fr 2fr;
     }
-
-    /* .hero .join-action {
-        top: auto;
-        left: auto;
-        height: auto;
-        font-size: 100%;
-        max-width: fit-content;
-    } */
 
     .events {
         grid-column: 1 / 2;
