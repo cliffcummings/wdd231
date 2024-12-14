@@ -312,7 +312,7 @@ section .discovery {
     transition: transform 0.5s ease-in-out;
 }
 
-.main-discover h3 {
+.main-discover h2 {
     padding-bottom: 1rem;
 }
 
@@ -354,12 +354,9 @@ section .discovery {
 .join-action {
     top: auto;
     left: auto;
-    bottom: 25%;
-    right: 2%;
     height: auto;
     font-size: 100%;
     max-width: fit-content;
-    border: 1px solid black;
 }
 
 /*.hero-text {
