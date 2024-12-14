@@ -40,7 +40,7 @@ header, body {
 
 .container {
     display: grid;
-    column-gap: 2rem;
+    column-gap: 2px;
     align-items: center;
 }
 
@@ -272,6 +272,11 @@ iframe {
     max-width: 500px;
 }
 
+.discover-sights p {
+    padding: 1rem;
+    text-align: center;
+}
+
 section .discovery {
     grid-column: 1 / 2;
 }
@@ -307,9 +312,13 @@ section .discovery {
     transition: transform 0.5s ease-in-out;
 }
 
+.main-discover h2 {
+    padding-bottom: 1rem;
+}
+
 /* Only transform .discover-sights images */
 .discover-sights img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .h1-div {
