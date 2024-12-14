@@ -20,7 +20,7 @@ daysBetweenVisits = ((todaysDate - lastVisit) / millisecs2Days).toFixed(0);
 
 console.log("Entering if-statement");
 console.log(`Last visit value ${lastVisit}`);
-// console.log(`Days between visits: ${daysBetweenVisits.toFixed(0)}`);
+console.log(`Days between visits: ${daysBetweenVisits}`);
 
 // msg is initially set but then overridden if lastVisit.Visit.length is not 0
 // If not overridden, this is the first visit
@@ -28,9 +28,9 @@ msg = "Welcome! Let us know if you have any questions";
 if (lastVisit.length !== 0) {
   if (daysBetweenVisits==0) {
     msg = "Back so soon! Awesome!";
-    } else {
-        msg = `You last visited ${daysBetweenVisits.toFixed(0)} day(s) ago.`;
-    }
+} else {
+    msg = `You last visited ${daysBetweenVisits} day(s) ago.`;
+  }
 }
 
 message.innerHTML = msg;
