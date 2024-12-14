@@ -354,9 +354,12 @@ section .discovery {
 .join-action {
     top: auto;
     left: auto;
+    bottom: 25%;
+    right: 2%;
     height: auto;
     font-size: 100%;
     max-width: fit-content;
+    border: 1px solid black;
 }
 
 /*.hero-text {
