@@ -312,7 +312,7 @@ section .discovery {
     transition: transform 0.5s ease-in-out;
 }
 
-.main-discover h2 {
+.main-discover h3 {
     padding-bottom: 1rem;
 }
 
