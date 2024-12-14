@@ -6,9 +6,11 @@ const millisecs2Days = 86400000;
 // The || [] part of the expression uses the OR operator to return
 // an empty array ([]) if JSON.parse returns null (first visit).
 //-----------------------------------------------------------------
+
+let lastVisit = new Date(0);
+lastVisit = JSON.parse(localStorage.getItem("visited")) || [];
 const todaysDate = Date.now();
 console.log(todaysDate);
-const lastVisit = JSON.parse(localStorage.getItem("visited")) || [];
 
 const message = document.querySelector(".visit-msg");
 let msg = "";
