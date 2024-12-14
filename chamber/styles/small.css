@@ -280,6 +280,10 @@ section .discovery {
     grid-gap: 1rem;
 }
 
+.main-discover {
+    grid-gap: 1rem;
+}
+
 .discovery div {
     display: block;
     /* border-color: var(--back_color1); */
@@ -296,6 +300,10 @@ section .discovery {
 }
 
 .discover-sights img {
+    transition: transform 0.5s ease-in-out;
+}
+
+.main-discover img {
     width: 100%;
     height: auto;
     transition: transform 0.5s ease-in-out;
