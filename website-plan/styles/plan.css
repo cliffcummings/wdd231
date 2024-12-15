@@ -1,0 +1,93 @@
+:root {
+    --back_color1: #0D1B2A;
+    --header_color1: #1D5599;
+    --sunburst_red: #CC0000;
+    --text_white: #ffffff;
+    --contact1: #ffff00;
+    --contact2: #addae6;
+}
+
+* {
+    margin-bottom: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, body {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+h1 {
+    color: var(--sunburst_red);
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+h2, h3 {
+    color: var(--header_color1);
+}
+
+
+main {
+    padding: 1rem;
+    background-color: var(--accent_color3);
+    min-width: 400px;
+    width: 100%;
+}
+
+ol, ul, li {
+    padding-left: 2rem;
+}
+
+div.wireframe {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 1rem;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+footer {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    color: var(--text_white);
+    background-color: var(--back_color1);
+    text-align: center;
+}
+
+header .center {
+    width:400px;
+    height: auto;
+}
+
+/* https://www.w3schools.com/howto/howto_css_image_center.asp */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
+}
+
+.contact a {
+    color: var(--contact1);
+}
+
+.contact a:hover a:active{
+    color: var(--contact2);
+}
+
+.name {
+    margin-bottom: 1rem;
+}
+
+.email {
+    margin-bottom: 2rem;
+}
