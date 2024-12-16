@@ -19,8 +19,8 @@
     <link rel="icon" href="./images/sunburst-favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/sunburst.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,16 +28,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
 
-    <script src="scripts/getdates.js" defer></script>
-    <script src="scripts/papers.js" defer></script>
+        <script src="scripts/getdates.js" defer></script>
+        <script src="scripts/papers.js" defer></script>
 
     <title>Sunburst Design Papers Page - Cliff Cummings</title>
 </head>
 
 <body>
     <header class=".container">
-        <div>
-            <img src="./images/UVChamber_100_74.png" alt="UV Chamber Logo" width="100" height="74">
+        <div class="sunburst-logo">
+            <a href="./index.html">
+            <img class="center" src="images/Sunburst_Logo1_413_139.webp" width="400" height="134" alt="Sunburst Design Logo">
+            </a>
+            <h1 class="roboto">World Class SystemVerilog &amp; UVM Training</h1>
         </div>
         <div class="pad">
             <h1>Cliff Cummings - Published Papers</h1>
@@ -54,62 +57,67 @@
     </nav>
 
     <main>
-        <div class="hero">
-            <picture>
-                <img class="hero-image" src="images/1024px-Mount_Timpanogos_1024_350.webp" alt="Mount Timpanogos Image">
-            </picture>
-            <div class="hero-text join-action">
-                <!-- <p>Chamber Info</p> -->
-                <!-- <button aria-label="Chamber of commerce information">Join the Chamber of Commerce</button> -->
-                <!-- <button>Join the Chamber of Commerce</button> -->
-                <a href="#">Join the Chamber of Commerce</a>
-            </div>
-            <div class="credits">
-                <a href="https://commons.wikimedia.org/wiki/File:Mount_Timpanogos_-_01-07-08.jpg">a4gpa from Provo, UT, USA</a>
-                <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0 via Wikimedia Commons</a>
-            </div>
-        </div>
+        <h2>Filter Papers by the following categories</h2>
 
         <div>
-            <h1>Home</h1>
+            <!-- <a id="filtermenu" href=""#""></a> -->
+            <button id="filtermenu" href=""#""></button>
+
+            <div>
+                <ul class="filtering">
+                    <li><a href="#" id="all">All Papers           </a></li>
+                    <li><a href="#" id="uvm">UVM                  </a></li>
+                    <li><a href="#" id="sv" >SystemVerilog        </a></li>
+                    <li><a href="#" id="cdc">CDC/FIFO & Resets    </a></li>
+                    <li><a href="#" id="fsm">Finite State Machines</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Cliff's Technical Notes</h2>
+        
+        <div class="notes-container">
+            <table id="cliffnotes">
+            </table>
         </div>
 
-        <section id="home">
-            <div class="events">
-                <h2>Events</h2>
-                <p>Irure commodo cupidatat labore cillum consectetur ea fugiat. Qui excepteur aliqua elit ullamco
-                    voluptate magna deserunt cupidatat reprehenderit deserunt eiusmod tempor amet. Eu laborum tempor sit
-                    consequat laborum laborum do et sint esse id aute. Id tempor et mollit et labore amet magna est
-                    officia pariatur laboris. Duis enim minim reprehenderit culpa incididunt.</p>
-            </div>
-            <div id="weather">
-                <h2>Current Weather</h2>
-                <div id="weather1"></div>
-            </div>
-            <div id="forecast">
-                <h2>Weather Forecast</h2>
-                <div id="forecast1"></div>
-                <div id="forecast2"></div>
-                <div id="forecast3"></div>
-            </div>
-        </section>
+        <h2>Cliff's Papers</h2>
+        
+        <div class="papers-container">
+            <table id="cliffpapers">
+            </table>
+        </div>
+        
+        <h2>Cliff's DAC Conference Presentations</h2>
+        
+        <div class="dac-container">
+            <table id="dacpresentations">
+            </table>
+        </div>
 
-        <section class="companies">
-            <h2>Spotlighting 3 Utah County Businesses</h2>
-            <div id="buss">
-                <div id="cards"></div>
-            </div>
-        </section>
+        <h2>Recommended Papers</h2>
+        <p>These papers are hosted with permission of the respective authors.
+            The authors may remove permission to host these papers at any time.
+        </p>
+
+        <div class="rec-container">
+            <table id="recommends">
+            </table>
+        </div>
+
+        <h2>Other Published Papers</h2>
+        <p>These papers are only available in their respective conference proceedings but are not available for download</p>
+    
+        <div class="others-container">
+            <table id="nonpublished">
+            </table>
+        </div>
+            
     </main>
 
     <footer class="container">
         <div>
-            <img src="./images/UVChamber_100_74.png" alt="UV Chamber Logo" width="100" height="74">
-            <p>Provo</p>
-            <p>2696 N. University Ave Suite 220</p>
-            <p>Provo UT 84604</p>
-            <p>(385) 482-2555</p>
-            <p>info@thechamber.org</p>
+            <p>TO BE ADDED</p>
         </div>
         <div>
             <a href="https://www.facebook.com/sunburst.design.training" target="_blank">

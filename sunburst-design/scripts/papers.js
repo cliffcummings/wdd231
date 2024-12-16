@@ -1,10 +1,31 @@
 const rootUrl = "https://www.sunburst-design.com/papers/";
+const papersURL = "data/papers.json";
 
-createCnotesTable(cnotes);
-createPapersTable(papers);
-createDacTable(dacs);
-createRecommendsTable(recommendeds);
-createOthersTable(otherpapers);
+async function getPapersData() {
+    const response = await fetch(papersURL);
+    if (response.ok) {
+        const data = await response.json();
+        // console.log("AWAITING RESPONSE data");
+        console.log(data);
+        createTables(data);
+    };
+}; 
+
+function createTables (data) {
+    createCnotesTable(data.cnotes);
+    createPapersTable(data.papers);
+    createDacTable(data.dacs);
+    createRecommendsTable(data.recommendeds);
+    createOthersTable(data.otherpapers);
+};
+
+getPapersData();
+
+// createCnotesTable(data.cnotes);
+// createPapersTable(papers);
+// createDacTable(dacs);
+// createRecommendsTable(recommendeds);
+// createOthersTable(otherpapers);
 
 function createCnotesTable(filtered) {
     // console.log("Starting createCnotesTable function-1");

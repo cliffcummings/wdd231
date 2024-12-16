@@ -1,10 +1,12 @@
 :root {
     --back_color1: #0D1B2A;
-    --header_color1: #1D5599;
+    --back_color2: #1D5599;
+    --back_color3: #57849C;
+    --accent_color1: #7FC6DE;
+    --accent_color2: #DFDFDF;
+    --accent_color3: #EFEFEF;
+    --wild_red: #FF0000;
     --sunburst_red: #CC0000;
-    --text_white: #ffffff;
-    --contact1: #ffff00;
-    --contact2: #addae6;
 }
 
 * {
@@ -13,22 +15,51 @@
     box-sizing: border-box;
 }
 
-header, body {
-    margin: 0 auto;
-    max-width: 1000px;
-}
-
 h1 {
-    color: var(--sunburst_red);
     margin-top: 0;
     font-size: 1.2rem;
     text-align: center;
 }
 
-h2, h3 {
-    color: var(--header_color1);
+h2 {
+    color: black;
+    font-size: 1rem;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: .2rem;
 }
 
+h3 {
+    margin: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    color: blue;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+/* padding: 0px keeps nav-bar at bottom of header */
+/* text-align nav button text to center */
+header {
+    display: block;
+    color: var(--sunburst_red);
+    border: none;
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    margin-right: 0.5rem;
+    justify-content: center;
+}
+
+/* Logo sizing and positioning */
+header .center {
+    width:400px;
+    height: auto;
+}
 
 main {
     padding: 1rem;
@@ -37,34 +68,211 @@ main {
     width: 100%;
 }
 
-ol, ul, li {
-    padding-left: 2rem;
-}
-
-div.wireframe {
-    display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-gap: 1rem;
-}
-
-img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-}
-
 footer {
     padding: 1rem;
-    margin-top: 1rem;
     margin-bottom: 3rem;
-    color: var(--text_white);
+    color: white;
     background-color: var(--back_color1);
     text-align: center;
 }
 
-header .center {
-    width:400px;
-    height: auto;
+/* Without unordered list, use flex-direction: row */
+nav {
+    justify-content:center;
+}
+
+nav ul, li {
+    display: block;
+    flex: 1 1 100%;
+    background-color: lightgoldenrodyellow;
+    margin: 0 1rem 1rem 1rem;
+}
+
+table, th, td, tr {
+    border: 2px solid;
+    padding: 2px;
+}
+
+table {
+    width: 100%;
+}
+
+ul {
+    margin-top: 0;
+    margin-left: 1.5rem;
+}
+
+/*-------------------------------------------------*/
+/* Item Selectors                                  */
+/*-------------------------------------------------*/
+/* Mobile View ***************/
+
+/* text-decoration: none removes underline from link */
+#filtermenu {
+    display: flex;
+	font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.5rem .75rem;
+	color: black;
+}
+
+/* content: "☰"; */
+/* content: "≡"; */
+#filtermenu::before {
+	content: "☰";
+}
+
+/* nav {
+    background-color: yellow;
+} */
+
+/* display: flex defined in filtermenu tag */
+#filtermenu.show {
+    flex-direction: column;
+}
+
+#filtermenu.show::before {
+	content: "❎";
+}
+
+#submit {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--accent_color3);
+    border-width: 1px;
+    margin: 1rem;
+    padding: .2rem;
+}
+
+/*-------------------------------------------------*/
+/* Class Selectors                                 */
+/*-------------------------------------------------*/
+
+/* .block {
+    display: block;
+} */
+
+.boldbox {
+    border: 3px solid var(--back_color1);
+    padding: 3px;
+    text-align: center;
+    margin: 1rem auto 1rem auto;
+    font-weight: bold;
+}
+
+.box {
+    border: 3px solid var(--back_color1);
+    padding: 3px;
+    text-align: left;
+    margin: 1rem auto 1rem auto;
+}
+
+.nobox {
+    text-align: center;
+    margin: 1rem auto 1rem auto;
+    font-weight: bold;
+}
+
+.filtering {
+    list-style: none;
+    margin: 0;
+    max-width: 550px;
+    display: none;
+}
+
+.filtering.show {
+    /* background-color: red; */
+    list-style: none;
+    margin: 0;
+    max-width: 450px;
+    display: block;
+}
+
+/* TODO - text-align */
+.filtering a {
+    display: block;
+    padding: 0.25rem 1rem;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.filtering a:hover a:active {
+    color: white;
+}
+
+.notes-container, .papers-container, .rec-container, .others-container, .dac-container {
+    display: grid;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.papers-container {
+    grid-template-columns: auto auto auto auto;
+    border-color: blue;
+}
+.notes-container {
+    grid-template-columns: auto auto auto;
+    border-color: var(--wild_red);
+}
+.dac-container {
+    grid-template-columns: auto auto;
+    border-color: yellow;
+}
+.rec-container {
+    grid-template-columns: auto auto;
+    border-color: green;
+}
+.others-container {
+    grid-template-columns: auto auto auto;
+    border-color: orange;
+}
+
+.item1 {
+    text-align: center;
+}
+
+.itempaper {
+    background-color: gold;
+    text-align: center;
+}
+
+.itemtech {
+    background-color: orange;
+    text-align: center;
+}
+
+.itemsig {
+    background-color: lightblue;
+    text-align: center;
+}
+
+.itemrev {
+    text-align: center;
+}
+
+.item2 {
+    grid-column-start: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+.navpane {
+    margin-top: 1rem;
 }
 
 /* https://www.w3schools.com/howto/howto_css_image_center.asp */
@@ -76,12 +284,31 @@ header .center {
     text-align: center;
 }
 
+.debug {
+    color: #0D1B2A;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 .contact a {
-    color: var(--contact1);
+    color: yellow;
 }
 
 .contact a:hover a:active{
-    color: var(--contact2);
+    color: lightblue;
+}
+
+#css-src {
+    margin-top: 0;
+}
+
+.arimo {
+    font-family: "Arimo", sans-serif;
+}
+
+.roboto {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .name {
