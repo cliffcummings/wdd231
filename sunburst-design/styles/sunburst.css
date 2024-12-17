@@ -222,7 +222,7 @@ h2 {
     font-size: 1rem;
     text-align: left;
     margin-top: 1rem;
-    margin-bottom: .2rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
@@ -230,6 +230,19 @@ h3 {
     font-size: 1rem;
     text-align: center;
     color: var(--back_color2);
+}
+
+#image-src img {
+    margin-right: 0.5rem;
+}
+
+.cliff p {
+    margin-bottom: 1rem;
+}
+
+.cliff ul, li {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 table, th, td, tr {
