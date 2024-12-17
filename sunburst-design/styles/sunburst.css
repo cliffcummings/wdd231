@@ -7,13 +7,143 @@
     --accent_color3: #EFEFEF;
     --wild_red: #FF0000;
     --sunburst_red: #CC0000;
-}
+    --text_white: #ffffff;
+    --contact1: #ffff00;
+    --contact2: #addae6;}
 
 * {
-    margin-bottom: auto;
-    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
 }
+
+/* white background in the header and body */
+/* HEADER CONTENT */
+
+header {
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: var(--text_white);
+    padding: 1rem;
+    justify-content: center;
+}
+
+/* BODY CONTENT */
+
+body {
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color: var(--text_white);
+}
+
+main {
+    padding: 1rem;
+    min-width: 400px;
+    width: 100%;
+}
+
+/* padding: 0px keeps nav-bar at bottom of header */
+/* text-align nav button text to center */
+header {
+    display: block;
+    color: var(--sunburst_red);
+    border: none;
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    justify-content: center;
+    text-decoration: none;
+}
+
+.partners img {
+    margin-right: 0.5rem;
+}
+
+/* Logo sizing and positioning */
+header .center {
+    width:400px;
+    height: auto;
+}
+
+/* Without unordered list, use flex-direction: row */
+/* https://www.w3schools.com/cssref/css3_pr_flex.php */
+/* flex: flex-grow flex-shrink flex-basis; */
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+nav a {
+    padding: 5px 6px;
+    color: var(--text_white);
+    background-color: var(--back_color2);
+    margin: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.nav-active nav a {
+    padding: 5px 6px;
+    color: var(--text_white);
+    background-color: var(--accent_color2);
+    margin: 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.contact-container a {
+    display: inline;
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--contact1);
+    justify-content: center;
+}
+
+.contact-container a:hover {
+    color: var(--contact2);
+}
+
+.contact-email {
+    grid-column: 1 / 4;
+    padding-bottom: 1rem;
+}
+
+.contact-email p {
+    display: inline;
+}
+
+/* FOOTER CONTENT */
+
+footer {
+    display: grid;
+    padding: 1rem 0;
+    color: white;
+    background-color: var(--back_color1);
+    text-align: center;
+    min-width: 400px;
+}
+
+footer a {
+    display: inline;
+}
+
+.footer-logo {
+    grid-column: 1 / 2;
+    align-self: center;
+}
+ .footer-social {
+    grid-column: 2 / 3;
+    align-self: center;
+ }
+
+ .footer-copy {
+    grid-column: 3 / 4;
+    align-self: center;
+ }
 
 h1 {
     margin-top: 0;
@@ -34,58 +164,6 @@ h3 {
     font-size: 1rem;
     text-align: center;
     color: blue;
-}
-
-body {
-    font-family: Roboto, sans-serif;
-}
-
-/* padding: 0px keeps nav-bar at bottom of header */
-/* text-align nav button text to center */
-header {
-    display: block;
-    color: var(--sunburst_red);
-    border: none;
-    margin: 0;
-    text-align: center;
-}
-
-img {
-    margin-right: 0.5rem;
-    justify-content: center;
-}
-
-/* Logo sizing and positioning */
-header .center {
-    width:400px;
-    height: auto;
-}
-
-main {
-    padding: 1rem;
-    background-color: var(--accent_color3);
-    min-width: 400px;
-    width: 100%;
-}
-
-footer {
-    padding: 1rem;
-    margin-bottom: 3rem;
-    color: white;
-    background-color: var(--back_color1);
-    text-align: center;
-}
-
-/* Without unordered list, use flex-direction: row */
-nav {
-    justify-content:center;
-}
-
-nav ul, li {
-    display: block;
-    flex: 1 1 100%;
-    background-color: lightgoldenrodyellow;
-    margin: 0 1rem 1rem 1rem;
 }
 
 table, th, td, tr {
@@ -122,10 +200,6 @@ ul {
 #filtermenu::before {
 	content: "☰";
 }
-
-/* nav {
-    background-color: yellow;
-} */
 
 /* display: flex defined in filtermenu tag */
 #filtermenu.show {
@@ -264,17 +338,6 @@ ul {
     text-align: center;
 }
 
-.navigation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-weight: bold;
-}
-
-.navpane {
-    margin-top: 1rem;
-}
-
 /* https://www.w3schools.com/howto/howto_css_image_center.asp */
 .center {
     display: block;
@@ -289,14 +352,6 @@ ul {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-}
-
-.contact a {
-    color: yellow;
-}
-
-.contact a:hover a:active{
-    color: lightblue;
 }
 
 #css-src {
