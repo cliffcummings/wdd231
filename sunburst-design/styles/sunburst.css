@@ -71,13 +71,13 @@ header .center {
 /* https://www.w3schools.com/cssref/css3_pr_flex.php */
 /* flex: flex-grow flex-shrink flex-basis; */
 
-/* TODO */
-/* .navigation {     
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0.5rem;
-} */
+
+ul.menuLinks a:hover {
+    background-color: var(--contact2);
+    color: var(--back_color1);
+    border: 1px solid var(--back_color2);
+}
+
 
 nav {
     display: grid;
@@ -342,7 +342,7 @@ ul {
 }
 
 .filtering a:hover {
-    background-color: var(--contact1);
+    background-color: var(--contact2);
     color: var(--back_color1);
 }
 

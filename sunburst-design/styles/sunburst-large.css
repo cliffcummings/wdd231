@@ -15,20 +15,10 @@
         justify-content: center;
     }
 
-    ul.menuLinks a:hover {
-        background-color: var(--contact1);
-        color: var(--back_color1);
-        border: 1px solid var(--back_color2);
-    }
-
     nav {
         grid-template-rows: 1fr;
         margin-right: 5%;
     }
-
-    /* main {
-        grid-template-columns: 1fr 1fr;
-    } */
 
     .pad {
         margin: 1rem 0 0.5rem 0;
