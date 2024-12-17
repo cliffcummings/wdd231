@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Advanced Verilog, SystemVerilog, UVM, Verilog Synthesis design and UVM verification expert and advanced training from Cliff Cummings of Sunburst Design">
-    <meta name="author" content="Cliff Cummings">
-    <meta name="keywords" content="Verilog , Verilog HDL , Verilog Training , System Verilog , SystemVerilog , systemverilog training , Advanced SystemVerilog, UVM, UVM Training, UVM verification training, Advanced UVM, synthesis , Verilog synthesis , SystemVerilog synthesis training , Cliff , Cummings , Cliff Cummings , evil twins , full_case , parallel_case , full parallel , nonblocking , non-blocking , systemverilog event queue , systemverilog event scheduling , verilog papers , Sunburst , Sunburst Design , advanced SystemVerilog training , expert SystemVerilog training , expert system verilog training , IEEE systemverilog training , IEEE systemverilog synthesis training , IEEE verilog , Verilog Standards Group , Accellera , FSM , FSM Design , state machine , state machines , verilog expert , verilog synthesis expert , synthesis expert , verilog models , verilog RTL , superlog , best paper , Provo , Utah , synthesis paper , be like Cliff , Cadence , Verilog-XL , QuestaSim , Synplicity , Synopsys , Synopsys training , Siemens , Mentor , VCS , VCS training , QuestaSim training , Synplify Pro ">
-
-
-    <!-- <link rel="stylesheet" href="styles/colors.css"> -->
-    <link rel="stylesheet" href="styles/sunburst.css">
-    <link rel="stylesheet" href="styles/sunburst-large.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-    <!-- <script src="scripts/sunburst.js" defer></script> -->
-    <script src="scripts/home.js" defer></script>
-    <!-- <script src="scripts/cliff.js" defer></script> -->
-    <script src="scripts/getdates.js" defer></script>
-    <title>Sunburst Cliff Cummings</title>
-</head>
-<body>
-    <header>
-        <div class="sunburst-logo">
-            <a href="./index.html">
-            <img class="center" src="images/Sunburst_Logo1_413_139.webp" width="400" height="134" alt="Sunburst Design Logo">
-            </a>
-            <h1 class="roboto">World Class SystemVerilog &amp; UVM Training</h1>
-        </div>
-
-        <!-- <div class="debug">
-            <p>DEBUG: Cliff Cummings cliffc.html page</p>
-            <div id="css-src">Uses sunburst.css</div>
-            <div id="result"></div>
-        </div> -->
-
-        <div class="navpane">
-            <nav class="navigation">
-                <ul class="navigation">
-                    <li><a href="./index.html"            id="home">    Home           </a></li>
-                    <li><a href="./verilog_training.html" id="training">Expert Training</a></li>
-                    <li><a href="./papers.html"           id="papers">  Papers         </a></li>
-                    <li><a href="./cliffc.html"           id="cliff">   About Cliff    </a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+            <meta name="description" content="WDD231 Sunburst Design Home Page">
+            <meta name="author" content="Cliff Cummings">
+        
+            <!-- social media meta tags -->
+            <meta property="og:title" content="WDD231 Sunburst Design Home Page">
+            <meta property="og:type" content="website">
+            <meta property="og:description" content="WDD231 Sunburst Design Home Page developed by Cliff Cummings.">
+            <meta property="og:image"
+                content="https://cliffcummings.github.io/wdd231/sunburst-design/images/Sunburst_Logo1_413_139.webp">
+            <meta property="og:url" content="https://cliffcummings.github.io/wdd231/sunburst-design/index.html#">
+        
+            <link rel="icon" href="images/favicon_16x16.ico" type="image/x-icon">
+        
+            <link rel="stylesheet" href="styles/normalize.css">
+            <link rel="stylesheet" href="styles/sunburst.css">
+            <link rel="stylesheet" href="styles/sunburst-large.css">
+            <!-- <link rel="stylesheet" href="styles/large.css"> -->
+        
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+                rel="stylesheet">
+                
+        <script src="scripts/getdates.js" defer></script>
+        <script src="scripts/gridButton.js" defer></script>
+        <script src="scripts/menu.js" defer></script>
+        <!-- <script src="scripts/sunburst.js" defer></script> -->
+    
+        <title>Sunburst Design Home</title>
+    </head>
+    
+    <body>
+        <header>
+            <div class="sunburst-logo">
+                <a href="./index.html">
+                <img class="center" src="images/Sunburst_Logo1_2160_720.webp" width="400" height="134" alt="Sunburst Design Logo">
+                </a>
+                <div id="inline">
+                    <h1 class="roboto">World Class SystemVerilog &amp; UVM Training</h1>
+                    <button id="myButton" aria-label="Hamburger Menu"></button>
+                </div>
+            </div>
+        </header>
+        
+        <nav id="animateme">
+            <ul class="menuLinks">
+                <li class="current-menu-item"><a href="./index.html" id="home">Home</a></li>
+                <li><a href="./verilog_training.html" id="training">Expert Training</a></li>
+                <li><a href="./papers.html" id="papers">Papers</a></li>
+                <li><a href="./cliffc.html" id="cliff">About Cliff</a></li>
+            </ul>
+        </nav>
     
     <main>
         <h2>

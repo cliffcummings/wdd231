@@ -218,7 +218,7 @@ footer a {
 }
 
 h2 {
-    color: black;
+    color: var(--back_color1);
     font-size: 1rem;
     text-align: left;
     margin-top: 1rem;
@@ -229,7 +229,7 @@ h3 {
     margin: 0.5rem;
     font-size: 1rem;
     text-align: center;
-    color: blue;
+    color: var(--back_color2);
 }
 
 table, th, td, tr {
@@ -341,8 +341,9 @@ ul {
     font-size: clamp(1rem, 2vmin, 1.5rem);
 }
 
-.filtering a:hover a:active {
-    color: white;
+.filtering a:hover {
+    background-color: var(--contact1);
+    color: var(--back_color1);
 }
 
 .notes-container, .papers-container, .rec-container, .others-container, .dac-container {
