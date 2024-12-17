@@ -2,6 +2,7 @@ const rootUrl = "https://www.sunburst-design.com/papers/";
 const papersURL = "data/papers.json";
 
 async function getPapersData() {
+    console.log("Starting getPapersData() function");
     const response = await fetch(papersURL);
     if (response.ok) {
         const data = await response.json();
@@ -28,7 +29,7 @@ getPapersData();
 // createOthersTable(otherpapers);
 
 function createCnotesTable(filtered) {
-    // console.log("Starting createCnotesTable function-1");
+    console.log("Starting createCnotesTable function-1");
     // Clear out existing innerWidth-created table
     document.getElementById("cliffnotes").innerHTML = "";
     // Get the table once
@@ -244,22 +245,27 @@ const fsmlink = document.querySelector("#fsm");
 // ALL button - get all papers
 alllink.addEventListener('click', () => {
     createAllTables("ALL");
+    console.log("DEBUG: **ALL** clicked");
 })
 
 uvmlink.addEventListener('click', () => {
     createAllTables("UVM");
+    console.log("DEBUG: **UVM** clicked");
 })
 
 svlink.addEventListener('click', () => {
     createAllTables("SV");
+    console.log("DEBUG: **SV** clicked");
 })
 
 cdclink.addEventListener('click', () => {
     createAllTables("CDC");
+    console.log("DEBUG: **CDC** clicked");
 })
 
 fsmlink.addEventListener('click', () => {
     createAllTables("FSM");
+    console.log("DEBUG: **FSM** clicked");
 })
 
 //-------------------------------------------------------------------------------
@@ -270,8 +276,12 @@ const hambutton = document.querySelector("#filtermenu");
 
 filtermenu.addEventListener('click', () => {
     filternav.classList.toggle('show');
+    console.log("Toggled filternav show");
+})
+
+hambutton.addEventListener('click', () => {
     hambutton.classList.toggle('show');
-    console.log("Toggled show");
+    console.log("Toggled hambutton show");
 })
 
 
