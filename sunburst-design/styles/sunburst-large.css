@@ -22,7 +22,7 @@
 
     nav {
         grid-template-rows: 1fr;
-
+        margin-right: 5%;
     }
 
     /* main {
