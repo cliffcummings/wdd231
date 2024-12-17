@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Advanced Verilog, SystemVerilog, UVM, Verilog Synthesis design and UVM verification expert and advanced training from Cliff Cummings of Sunburst Design">
-    <meta name="author" content="Cliff Cummings">
-    <meta name="keywords" content="Verilog , Verilog HDL , Verilog Training , System Verilog , SystemVerilog , systemverilog training , Advanced SystemVerilog, UVM, UVM Training, UVM verification training, Advanced UVM, synthesis , Verilog synthesis , SystemVerilog synthesis training , Cliff , Cummings , Cliff Cummings , evil twins , full_case , parallel_case , full parallel , nonblocking , non-blocking , systemverilog event queue , systemverilog event scheduling , verilog papers , Sunburst , Sunburst Design , advanced SystemVerilog training , expert SystemVerilog training , expert system verilog training , IEEE systemverilog training , IEEE systemverilog synthesis training , IEEE verilog , Verilog Standards Group , Accellera , FSM , FSM Design , state machine , state machines , verilog expert , verilog synthesis expert , synthesis expert , verilog models , verilog RTL , superlog , best paper , Provo , Utah , synthesis paper , be like Cliff , Cadence , Verilog-XL , QuestaSim , Synplicity , Synopsys , Synopsys training , Siemens , Mentor , VCS , VCS training , QuestaSim training , Synplify Pro ">
-
-
-    <!-- <link rel="stylesheet" href="styles/colors.css"> -->
-    <link rel="stylesheet" href="styles/sunburst.css">
-    <link rel="stylesheet" href="styles/sunburst-large.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-    <!-- <script src="scripts/sunburst.js" defer></script> -->
-    <script src="scripts/home.js" defer></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <meta name="description" content="WDD231 Sunburst Design Home Page">
+        <meta name="author" content="Cliff Cummings">
+    
+        <!-- social media meta tags -->
+        <meta property="og:title" content="WDD231 Sunburst Design Home Page">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="WDD231 Sunburst Design Home Page developed by Cliff Cummings.">
+        <meta property="og:image"
+            content="https://cliffcummings.github.io/wdd231/sunburst-design/images/Sunburst_Logo1_413_139.webp">
+        <meta property="og:url" content="https://cliffcummings.github.io/wdd231/sunburst-design/index.html#">
+    
+        <link rel="icon" href="images/favicon_16x16.ico" type="image/x-icon">
+    
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/sunburst.css">
+        <link rel="stylesheet" href="styles/sunburst-large.css">
+        <!-- <link rel="stylesheet" href="styles/large.css"> -->
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet">
+            
     <script src="scripts/getdates.js" defer></script>
-    <title>Sunburst Expert Training</title>
+    <script src="scripts/gridButton.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
+    <!-- <script src="scripts/sunburst.js" defer></script> -->
+
+    <title>Sunburst Design Home</title>
 </head>
+
 <body>
     <header>
         <div class="sunburst-logo">
             <a href="./index.html">
-            <img class="center" src="images/Sunburst_Logo1_413_139.webp" width="400" height="134" alt="Sunburst Design Logo">
+            <img class="center" src="images/Sunburst_Logo1_2160_720.webp" width="400" height="134" alt="Sunburst Design Logo">
             </a>
-            <h1 class="roboto">World Class SystemVerilog &amp; UVM Training</h1>
-        </div>
-
-        <!-- <div class="debug">
-            <p>DEBUG: Expert Training verilog_training.html page</p>
-            <div id="css-src">Uses sunburst.css</div>
-            <div id="result"></div>
-        </div> -->
-
-        <!-- Add formated navigation menu - beginning menu shown -->
-
-        <div class="navpane">
-            <nav class="navigation">
-                <ul class="navigation">
-                    <li><a href="./index.html"            id="home">    Home           </a></li>
-                    <li><a href="./verilog_training.html" id="training">Expert Training</a></li>
-                    <li><a href="./papers.html"           id="papers">  Papers         </a></li>
-                    <li><a href="./cliffc.html"           id="cliff">   About Cliff    </a></li>
-                </ul>
-            </nav>
+            <div id="inline">
+                <h1 class="roboto">World Class SystemVerilog &amp; UVM Training</h1>
+                <button id="myButton" aria-label="Hamburger Menu"></button>
+            </div>
         </div>
     </header>
+    
+    <nav id="animateme">
+        <ul class="menuLinks">
+            <li><a href="./index.html" id="home">Home</a></li>
+            <li><a href="./verilog_training.html" id="training">Expert Training</a></li>
+            <li class="current-menu-item"><a href="./papers.html" id="papers">Papers</a></li>
+            <li><a href="./cliffc.html" id="cliff">About Cliff</a></li>
+        </ul>
+    </nav>
     
     <main>
         <div>
@@ -107,18 +114,37 @@
             
     </main>
 
-    <footer class="contact">
-        <p>To request information about Sunburst Design course content and customization,
-            <a href="mailto:cliffc@sunburst-design.com?subject=Info%20-%20Sunburst%20Design%20Training">
-            cliffc@sunburst-design.com</a>
-        </p>
-        <p>To request information about pricing, quotes and scheduling,
-            <a href="mailto:michael.hoyt@paradigm-works.com?subject=Sunburst%20Design%20Training%20-%20Pricing,%20Quotes,%20Scheduling">
-            michael.hoyt@paradigm-works.com</a>
-        </p>
+    <footer class="contact-container">
+        <div class="contact-email">
+            <p>To request information about Sunburst Design course content and customization,
+                <a href="mailto:cliffc@sunburst-design.com?subject=Info%20-%20Sunburst%20Design%20Training">
+                cliffc@sunburst-design.com</a>
+            </p>
+            <br>
+            <p>To request information about pricing, quotes and scheduling,
+                <a href="mailto:michael.hoyt@paradigm-works.com?subject=Sunburst%20Design%20Training%20-%20Pricing,%20Quotes,%20Scheduling">
+                michael.hoyt@paradigm-works.com</a>
+            </p>
+        </div>
 
-        <p id="copywrite"></p>
-        <p id="modified"></p>
+        <div class="footer-logo">
+            <img src="./images/Sunburst_Logo1_400_133.webp" alt="Sunburst Design Logo" width="150" height="50">
+        </div>
+        
+        <div class="footer-social">
+            <img src="images/facebook_50_50.png" alt="Facebook" width="50" height="50">
+            <a href="http://www.facebook.com/sunburst.design.training" target="_blank"></a>
+
+            <img src="images/linkedin_50_50.png" alt="Twitter" width="50" height="50">
+            <a href="http://www.linkedin.com/in/cliffcummings" target="_blank"></a>
+        </div>
+
+        <div class="footer-copy">
+            <p>WDD 231 Class Project</p>
+            <p>Cliff Cummings</p>
+            <p id="copywrite"></p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 </body>
 </html>
