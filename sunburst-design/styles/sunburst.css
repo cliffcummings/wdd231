@@ -374,9 +374,6 @@ ul {
 
 .notes-container, .papers-container, .rec-container, .others-container, .dac-container {
     display: grid;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--back_color2);
 }
 
 .notes-container {
