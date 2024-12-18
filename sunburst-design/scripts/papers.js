@@ -38,24 +38,23 @@ function createCnotesTable(filtered) {
         // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(cnote => {
-            // let row = document.createElement("tr");
-            let row = document.createElement("p");
-            let title = document.createElement("p");
-            let revision = document.createElement("p");
+            let card = document.createElement("p");
 
+            let note = "";
             if (cnote.cliffnote == "NA") {
-                row.innerHTML = `<div class="item1"><p></p></div>`;
+                note = "";
             } else {
-                row.innerHTML = `<div class="item1"><p>Cliff-Note ${cnote.cliffnote}</p></div>`;
+                note = `Cliff-Note ${cnote.cliffnote}`;
             }
 
-            title.innerHTML = `<p class="g2"><a href="${rootUrl}${cnote.url}">${cnote.title}</a></p>`;
-            revision.innerHTML = `<div class="itemrev"><p>Rev ${cnote.rev}<br>${cnote.revdate}</p></div>`
+            let title = `<a href="${rootUrl}${cnote.url}">${cnote.title}</a>`;
+            let revision = `Rev ${cnote.rev}<br>${cnote.revdate}`;
 
-            // row.appendChild(conference);
-            row.appendChild(title);
-            row.appendChild(revision);
-            table.appendChild(row);
+            let entry = `${note}<br>${title}<br>${revision}`;
+            console.log(entry);
+            
+            card.innerHTML = entry;
+            table.appendChild(card);
         })
     } else {
         document.getElementById("cliffnotes").innerHTML = "";

@@ -411,8 +411,12 @@ ul {
 .others-container {
     grid-template-columns: auto auto auto;
 }
-.others-container h2, p {
+.others-container h2, .others-container p {
     grid-column: 1 / 4;
+}
+
+#cliffnotes p, #cliffpapers p, #dacpresentations p, #recommends p, #nonpublished p {
+    border: 1px solid var(--back_color2);
 }
 
 .item1 {
