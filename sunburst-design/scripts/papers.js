@@ -40,15 +40,15 @@ function createCnotesTable(filtered) {
         filtered.forEach(cnote => {
             let card = document.createElement("p");
 
-            let note = "";
+            let note;
             if (cnote.cliffnote == "NA") {
-                note = "";
+                note = `<div class="g1">""</div>`;
             } else {
-                note = `Cliff-Note ${cnote.cliffnote}`;
+                note = `<div class="g1">Cliff-Note ${cnote.cliffnote}</div>`;
             }
 
-            let title = `<a href="${rootUrl}${cnote.url}">${cnote.title}</a>`;
-            let revision = `Rev ${cnote.rev}<br>${cnote.revdate}`;
+            let title = `<div class="g2"><a href="${rootUrl}${cnote.url}">${cnote.title}</a></div>`;
+            let revision = `<div class="g3">Rev ${cnote.rev}<br>${cnote.revdate}</div>`;
 
             let entry = `${note}<br>${title}<br>${revision}`;
             // console.log(entry);
