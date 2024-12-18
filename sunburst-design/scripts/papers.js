@@ -6,28 +6,22 @@ let data = [];
 getPapersData();
 
 async function getPapersData() {
-    console.log("Starting getPapersData() function");
+    // console.log("Starting getPapersData() function");
     const response = await fetch(papersURL);
     if (response.ok) {
         data = await response.json();
-        console.log("AWAITING RESPONSE data");
-        console.log(data);
+        // console.log("AWAITING RESPONSE data");
+        // console.log(data);
         createInitialTables(data);
     };
 }; 
 
 function createInitialTables (data) {
-    console.log("Creating initial tables");
     createCnotesTable(data.cnotes);
-    console.log(`DEBUG: cnotes processed`);
     createPapersTable(data.papers);
-    console.log(`DEBUG: papers processed`);
     createDacTable(data.dacs);
-    console.log(`DEBUG: dacs processed`);
     createRecommendsTable(data.recommendeds);
-    console.log(`DEBUG: recommends processed`);
     createOthersTable(data.otherpapers);
-    console.log(`DEBUG: otherpapers processed`);
 };
 
 function createCnotesTable(filtered) {
@@ -41,7 +35,7 @@ function createCnotesTable(filtered) {
         h2.innerHTML = `<h2>${h2text}</h2>`;      
         table.appendChild(h2);
 
-        console.log(filtered);
+        // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(cnote => {
             // let row = document.createElement("tr");
@@ -138,7 +132,7 @@ function createDacTable(filtered) {
         h2.innerHTML = `<h2>${h2text}</h2>`;      
         table.appendChild(h2);
 
-        console.log(filtered);
+        // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(dac => {
             let row = document.createElement("p");
@@ -170,7 +164,7 @@ function createRecommendsTable(filtered) {
         summary.innerHTML = `<p>${summarytext}</p>`;      
         table.appendChild(summary);
 
-        console.log(filtered);
+        // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(recommend => {
             let row = document.createElement("p");
@@ -202,7 +196,7 @@ function createOthersTable(filtered) {
         summary.innerHTML = `<p>${summarytext}</p>`;      
         table.appendChild(summary);
 
-        console.log(filtered);
+        // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(xtra => {
             let row = document.createElement("p");
@@ -230,7 +224,6 @@ function createOthersTable(filtered) {
 
 // Not called until a button is clicked
 function createAllTables(tag) {
-    console.log(`DEBUG: tag is ${tag}`);
     let filteredcnotes = data.cnotes;
     let filteredpapers = data.papers;
     let filtereddacs = data.dacs;
@@ -269,29 +262,23 @@ const fsmlink = document.querySelector("#fsm");
 
 // ALL button - get all papers
 alllink.addEventListener('click', () => {
-    console.log(data);
-    console.log("DEBUG: **ALL** clicked");
     createAllTables("ALL");
 })
 
 uvmlink.addEventListener('click', () => {
     createAllTables("UVM");
-    console.log("DEBUG: **UVM** clicked");
 })
 
 svlink.addEventListener('click', () => {
     createAllTables("SV");
-    console.log("DEBUG: **SV** clicked");
 })
 
 cdclink.addEventListener('click', () => {
     createAllTables("CDC");
-    console.log("DEBUG: **CDC** clicked");
 })
 
 fsmlink.addEventListener('click', () => {
     createAllTables("FSM");
-    console.log("DEBUG: **FSM** clicked");
 })
 
 //-------------------------------------------------------------------------------
