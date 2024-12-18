@@ -1,26 +1,38 @@
 const rootUrl = "https://www.sunburst-design.com/papers/";
 const papersURL = "data/papers.json";
 
+let data = [];
+let text = [];
+
+console.log("RUNNING");
+getPapersData();
+// console.log("SHOWING DATA");
+
 async function getPapersData() {
     console.log("Starting getPapersData() function");
     const response = await fetch(papersURL);
     if (response.ok) {
-        const data = await response.json();
-        // console.log("AWAITING RESPONSE data");
+        data = await response.json();
+        console.log("AWAITING RESPONSE data");
         console.log(data);
-        createTables(data);
+        createInitialTables(data);
+        // return data;
     };
 }; 
 
-function createTables (data) {
+function createInitialTables (data) {
+    console.log("Creating initial tables");
     createCnotesTable(data.cnotes);
+    console.log(`DEBUG: cnotes processed`);
     createPapersTable(data.papers);
+    console.log(`DEBUG: papers processed`);
     createDacTable(data.dacs);
+    console.log(`DEBUG: dacs processed`);
     createRecommendsTable(data.recommendeds);
+    console.log(`DEBUG: recommends processed`);
     createOthersTable(data.otherpapers);
+    console.log(`DEBUG: otherpapers processed`);
 };
-
-getPapersData();
 
 // createCnotesTable(data.cnotes);
 // createPapersTable(papers);
@@ -29,43 +41,66 @@ getPapersData();
 // createOthersTable(otherpapers);
 
 function createCnotesTable(filtered) {
-    console.log("Starting createCnotesTable function-1");
-    // Clear out existing innerWidth-created table
-    document.getElementById("cliffnotes").innerHTML = "";
-    // Get the table once
-    let table = document.getElementById("cliffnotes")
+    console.log("Starting createCnotesTable function");
+    console.log(filtered);
+    console.log(filtered.length);
+    if (filtered.length > 0) {
+        console.log("TRUE");
+        // Clear out existing innerWidth-created table
+        document.getElementById("cliffnotes").innerHTML = "";
+        // Get the table once
+        let table = document.getElementById("cliffnotes")
+        let h2 = document.createElement("h2");
+        let h2text = "Cliff's Technical Notes";
+        h2.innerHTML = `<h2>${h2text}</h2>`;      
+        table.appendChild(h2);
 
-    // Now append rows and table-data to the table
-    filtered.forEach(cnote => {
-        let row = document.createElement("tr");
-        let conference = document.createElement("td");
-        let title = document.createElement("td");
-        let revision = document.createElement("td");
+        console.log(filtered);
+        // Now append rows and table-data to the table
+        filtered.forEach(cnote => {
+            let row = document.createElement("tr");
+            let conference = document.createElement("td");
+            let title = document.createElement("td");
+            let revision = document.createElement("td");
 
-        if (cnote.cliffnote == "NA") {
-            conference.innerHTML = `<td></td>`;
-        } else {
-            conference.innerHTML = `<div class="item1"><td>Cliff-Note ${cnote.cliffnote}</td></div>`;
-        }
+            if (cnote.cliffnote == "NA") {
+                // conference.innerHTML = `<td></td>`;
+                conference.innerHTML = `<p></p>`;
+            } else {
+                conference.innerHTML = `<div class="item1"><p>Cliff-Note ${cnote.cliffnote}</p></div>`;
+            }
 
-        title.innerHTML = `<td><a href="${rootUrl}${cnote.url}">${cnote.title}</a></td>`;
-        revision.innerHTML = `<div class="itemrev">Rev ${cnote.rev}<br>${cnote.revdate}</td></div>`
+            title.innerHTML = `<p><a href="${rootUrl}${cnote.url}">${cnote.title}</a></p>`;
+            revision.innerHTML = `<div class="itemrev">Rev ${cnote.rev}<br>${cnote.revdate}</td></div>`
 
-        row.appendChild(conference);
-        row.appendChild(title);
-        row.appendChild(revision);
-        table.appendChild(row);
-    })
+            row.appendChild(conference);
+            row.appendChild(title);
+            row.appendChild(revision);
+            table.appendChild(row);
+        })
+    } else {
+        console.log("FALSE");
+        document.getElementById("cliffnotes").innerHTML = "";
+    }
 }
 
 function createPapersTable(filtered) {
+    console.log("Starting createPapersTable function");
+    console.log(filtered);
+    console.log(filtered.length);
+    if (filtered.length > 0) {
+        console.log("TRUE");
     // console.log("Starting createPapersTable function-2");
     // Clear out existing innerWidth-created table
     document.getElementById("cliffpapers").innerHTML = "";
     // Get the table once
     let table = document.getElementById("cliffpapers");
-    // let table = [];
+    let h2 = document.createElement("h2");
+    let h2text = "Cliff's Papers";
+    h2.innerHTML = `<h2>${h2text}</h2>`;      
+    table.appendChild(h2);
 
+    console.log(filtered);
     // Now append rows and table-data to the table
     filtered.forEach(paper => {
         // console.log(`${paper.conf} ${paper.year}`);
@@ -114,91 +149,142 @@ function createPapersTable(filtered) {
         row.appendChild(award);
         table.appendChild(row);
     })
+} else {
+    console.log("FALSE");
+    document.getElementById("cliffpapers").innerHTML = "";
+}
 }
 
 function createDacTable(filtered) {
-    // console.log("Starting createDacTable function-2B");
-    // Clear out existing innerWidth-created table
-    document.getElementById("dacpresentations").innerHTML = "";
-    // Get the table once
-    let table = document.getElementById("dacpresentations")
+    console.log("Starting createDacTable function");
+    console.log(filtered);
+    console.log(filtered.length);
+    if (filtered.length > 0) {
+        console.log("TRUE");// console.log("Starting createDacTable function-2B");
+        // Clear out existing innerWidth-created table
+        document.getElementById("dacpresentations").innerHTML = "";
+        // Get the table once
+        let table = document.getElementById("dacpresentations");
+        let h2 = document.createElement("h2");
+        let h2text = "Cliff's DAC Conference Presentations";
+        h2.innerHTML = `<h2>${h2text}</h2>`;      
+        table.appendChild(h2);
 
-    // Now append rows and table-data to the table
-    filtered.forEach(dac => {
-        let row = document.createElement("tr");
-        let conference = document.createElement("td");
-        let title = document.createElement("td");
+        console.log(filtered);
+        // Now append rows and table-data to the table
+        filtered.forEach(dac => {
+            let row = document.createElement("tr");
+            let conference = document.createElement("td");
+            let title = document.createElement("td");
 
-        conference.innerHTML = `<div class="item1"><td>${dac.conf}<br>${dac.year}</td></div>`;
-        title.innerHTML = `<td><a href="${rootUrl}${dac.url}">${dac.title}</a></td>`;
+            conference.innerHTML = `<div class="item1"><td>${dac.conf}<br>${dac.year}</td></div>`;
+            title.innerHTML = `<td><a href="${rootUrl}${dac.url}">${dac.title}</a></td>`;
 
-        row.appendChild(conference);
-        row.appendChild(title);
-        table.appendChild(row);
-    })
-}
+            row.appendChild(conference);
+            row.appendChild(title);
+            table.appendChild(row);
+        })
+    } else {
+        console.log("FALSE");
+        document.getElementById("dacpresentations").innerHTML = "";
+    }}
 
 function createRecommendsTable(filtered) {
-    // console.log("Starting createRecommendsTable function-3");
-    // Clear out existing innerWidth-created table
-    document.getElementById("recommends").innerHTML = "";
-    // Get the table once
-    let table = document.getElementById("recommends")
+    console.log("Starting createRecommendsTable function");
+    console.log(filtered);
+    console.log(filtered.length);
+    if (filtered.length > 0) {
+        // Clear out existing innerWidth-created table
+        document.getElementById("recommends").innerHTML = "";
+        // Get the table once
+        let table = document.getElementById("recommends")
+        let h2 = document.createElement("h2");
+        let h2text = "Recommended Papers";
+        h2.innerHTML = `<h2>${h2text}</h2>`;      
+        table.appendChild(h2);
 
-    // Now append rows and table-data to the table
-    filtered.forEach(recommend => {
-        let row = document.createElement("tr");
-        let conference = document.createElement("td");
-        let title = document.createElement("td");
+        let summary = document.createElement("p");
+        let summarytext = "These papers are hosted with permission of the respective authors. The authors may remove permission to host these papers at any time.";
+        summary.innerHTML = `<p>${summarytext}</p>`;      
+        table.appendChild(summary);
 
-        conference.innerHTML = `<div class="item1"><td>${recommend.conf}<br>${recommend.year}</td></div>`;
-        title.innerHTML = `<td><a href="${rootUrl}${recommend.url}">${recommend.title}</a></td>`;
+        console.log(filtered);
+        // Now append rows and table-data to the table
+        filtered.forEach(recommend => {
+            let row = document.createElement("tr");
+            let conference = document.createElement("td");
+            let title = document.createElement("td");
 
-        row.appendChild(conference);
-        row.appendChild(title);
-        table.appendChild(row);
-    })
-}
+            conference.innerHTML = `<div class="item1"><td>${recommend.conf}<br>${recommend.year}</td></div>`;
+            title.innerHTML = `<td><a href="${rootUrl}${recommend.url}">${recommend.title}</a></td>`;
+
+            row.appendChild(conference);
+            row.appendChild(title);
+            table.appendChild(row);
+        })
+    } else {
+        console.log("FALSE");
+        document.getElementById("recommends").innerHTML = "";
+    }}
 
 function createOthersTable(filtered) {
-    // console.log("Starting createOthersTable function-4");
-    // Clear out existing innerWidth-created table
-    document.getElementById("nonpublished").innerHTML = "";
-    // Get the table once
-    let table = document.getElementById("nonpublished")
+    console.log("Starting createRecommendsTable function");
+    console.log(filtered);
+    console.log(filtered.length);
+    if (filtered.length > 0) {
+        // console.log("Starting createOthersTable function-4");
+        // Clear out existing innerWidth-created table
+        document.getElementById("nonpublished").innerHTML = "";
+        // Get the table once
+        let table = document.getElementById("nonpublished")
+        let h2 = document.createElement("h2");
+        let h2text = "Other Published Papers";
+        h2.innerHTML = `<h2>${h2text}</h2>`;      
+        table.appendChild(h2);
 
-    // Now append rows and table-data to the table
-    filtered.forEach(xtra => {
-        let row = document.createElement("tr");
-        let conference = document.createElement("td");
-        let title = document.createElement("td");
-        let award = document.createElement("td");
+        let summary = document.createElement("p");
+        let summarytext = "These papers are only available in their respective conference proceedings but are not available for download.";
+        summary.innerHTML = `<p>${summarytext}</p>`;      
+        table.appendChild(summary);
 
-        conference.innerHTML = `<div class="item1"><td>${xtra.conf}<br>${xtra.year}</td></div>`;
-        title.innerHTML = `<td>${xtra.title}</td>`;
-        // revision.innerHTML = `<td>Rev ${xtra.rev}<br>${xtra.revdate}</td>`
-        switch (xtra.awardtype) {
-            case "CAEsig":
-                award.innerHTML = `<div class=itemsig><td>Voted Best Paper<br>${xtra.award} Place - CAE SIG</td></div>`;
-                break;
-            default:
-                award.innerHTML = `<td></td>`;
-                break;
-        }
+        console.log(filtered);
+        // Now append rows and table-data to the table
+        filtered.forEach(xtra => {
+            let row = document.createElement("tr");
+            let conference = document.createElement("td");
+            let title = document.createElement("td");
+            let award = document.createElement("td");
 
-        row.appendChild(conference);
-        row.appendChild(title);
-        row.appendChild(award);
-        table.appendChild(row);
-    })
-}
+            conference.innerHTML = `<div class="item1"><td>${xtra.conf}<br>${xtra.year}</td></div>`;
+            title.innerHTML = `<td>${xtra.title}</td>`;
+            // revision.innerHTML = `<td>Rev ${xtra.rev}<br>${xtra.revdate}</td>`
+            switch (xtra.awardtype) {
+                case "CAEsig":
+                    award.innerHTML = `<div class=itemsig><td>Voted Best Paper<br>${xtra.award} Place - CAE SIG</td></div>`;
+                    break;
+                default:
+                    award.innerHTML = `<td></td>`;
+                    break;
+            }
 
+            row.appendChild(conference);
+            row.appendChild(title);
+            row.appendChild(award);
+            table.appendChild(row);
+        })
+    } else {
+        console.log("FALSE");
+        document.getElementById("nonpublished").innerHTML = "";
+    }}
+
+// Not called until a button is clicked
 function createAllTables(tag) {
-    let filteredcnotes = cnotes;
-    let filteredpapers = papers;
-    let filtereddacs = dacs;
-    let filteredrecs = recommendeds;
-    let filteredothers = otherpapers;
+    console.log(`DEBUG: tag is ${tag}`);
+    let filteredcnotes = data.cnotes;
+    let filteredpapers = data.papers;
+    let filtereddacs = data.dacs;
+    let filteredrecs = data.recommendeds;
+    let filteredothers = data.otherpapers;
 
     if (tag == "ALL") {
         // console.log("ALL Button clicked");
@@ -208,11 +294,11 @@ function createAllTables(tag) {
         createRecommendsTable(filteredrecs);
         createOthersTable(filteredothers);
     } else {
-        filteredcnotes = cnotes.filter(cnotes => cnotes.tags.includes(tag));
-        filteredpapers = papers.filter(papers => papers.tags.includes(tag));
-        filtereddacs = dacs.filter(dacs => dacs.tags.includes(tag));
-        filteredrecs = recommendeds.filter(recommendeds => recommendeds.tags.includes(tag));
-        filteredothers = otherpapers.filter(otherpapers => otherpapers.tags.includes(tag));
+        filteredcnotes = data.cnotes.filter(cnotes => cnotes.tags.includes(tag));
+        filteredpapers = data.papers.filter(papers => papers.tags.includes(tag));
+        filtereddacs = data.dacs.filter(dacs => dacs.tags.includes(tag));
+        filteredrecs = data.recommendeds.filter(recommendeds => recommendeds.tags.includes(tag));
+        filteredothers = data.otherpapers.filter(otherpapers => otherpapers.tags.includes(tag));
         createCnotesTable(filteredcnotes);
         createPapersTable(filteredpapers);
         createDacTable(filtereddacs);
@@ -244,8 +330,9 @@ const fsmlink = document.querySelector("#fsm");
 
 // ALL button - get all papers
 alllink.addEventListener('click', () => {
-    createAllTables("ALL");
+    console.log(data);
     console.log("DEBUG: **ALL** clicked");
+    createAllTables("ALL");
 })
 
 uvmlink.addEventListener('click', () => {
