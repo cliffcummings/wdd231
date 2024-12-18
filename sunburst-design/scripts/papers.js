@@ -51,7 +51,7 @@ function createCnotesTable(filtered) {
             let revision = `Rev ${cnote.rev}<br>${cnote.revdate}`;
 
             let entry = `${note}<br>${title}<br>${revision}`;
-            console.log(entry);
+            // console.log(entry);
             
             card.innerHTML = entry;
             table.appendChild(card);
@@ -75,45 +75,45 @@ function createPapersTable(filtered) {
         // Now append rows and data to the table
         filtered.forEach(paper => {
 
-            let row = document.createElement("p");
-            let title = document.createElement("p");
-            let revision = document.createElement("p");
-            let award = document.createElement("p");
+            let card = document.createElement("p");
 
+            let note = "";
             if (paper.conf == "NA") {
                 if (paper.cliffnote == "NA") {
-                    row.innerHTML = `<p></p>`;
+                    note = "";
                 } else {
-                    row.innerHTML = `<p>Cliff-Note ${paper.cliffnote}</p>`;
+                    note =`Cliff-Note ${paper.cliffnote}`;
                 }
             } else {
-                row.innerHTML = `<div class="item1"><p>${paper.conf}<br>${paper.year}</p><div>`;
+                note = `${paper.conf}<br>${paper.year}`;
             }
             // Linking to papers on sunburst-design.com/papers page
-            title.innerHTML = `<p><a href="${rootUrl}${paper.url}">${paper.title}</a></p>`;
-            revision.innerHTML = `<div class="itemrev"><p>Rev ${paper.rev}<br>${paper.revdate}</p></div>`
+            let title = `<a href="${rootUrl}${paper.url}">${paper.title}</a>`;
+            let revision = `Rev ${paper.rev}<br>${paper.revdate}`
+            let award;
             switch (paper.awardtype) {
                 case "Paper":
-                    award.innerHTML = `<div class="itempaper"><p>Voted Best Paper<br>${paper.award} Place</p></div>`;
+                    award = `<div class="itempaper">Voted Best Paper<br>${paper.award} Place</div>`;
                     break;
                 case "Tech":
-                    award.innerHTML = `<div class="itemtech"><p>Tech Paper Award<br>${paper.award} Place</p></div>`;
+                    award = `<div class="itemtech">Tech Paper Award<br>${paper.award} Place</div>`;
                     break;
                 case "CAEsig":
-                    award.innerHTML = `<div class="itemsig"><p>Voted Best Paper<br>${paper.award} Place - CAE SIG</p></div>`;
+                    award = `<div class="itemsig">Voted Best Paper<br>${paper.award} Place - CAE SIG</div>`;
                     break;
                 case "ICsig":
-                    award.innerHTML = `<div class="itemsig"><p>Voted Best Paper<br>${paper.award} Place - IC SIG</p></div>`;
+                    award = `<div class="itemsig">Voted Best Paper<br>${paper.award} Place - IC SIG</div>`;
                     break;
                 default:
-                    award.innerHTML = `<p></p>`;
+                    award = "";
                     break;
             }
 
-            row.appendChild(title);
-            row.appendChild(revision);
-            row.appendChild(award);
-            table.appendChild(row);
+            let entry = `${note}<br>${title}<br>${revision}<br>${award}`;
+            // console.log(entry);
+            
+            card.innerHTML = entry;
+            table.appendChild(card);
         })
     } else {
         document.getElementById("cliffpapers").innerHTML = "";
@@ -134,14 +134,16 @@ function createDacTable(filtered) {
         // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(dac => {
-            let row = document.createElement("p");
-            let title = document.createElement("p");
+            let card = document.createElement("p");
 
-            row.innerHTML = `<div class="item1"><p>${dac.conf}<br>${dac.year}</p></div>`;
-            title.innerHTML = `<p><a href="${rootUrl}${dac.url}">${dac.title}</a></p>`;
+            let note = `${dac.conf}<br>${dac.year}`;
+            let title = `<a href="${rootUrl}${dac.url}">${dac.title}</a>`;
 
-            row.appendChild(title);
-            table.appendChild(row);
+            let entry = `${note}<br>${title}`;
+            // console.log(entry);
+            
+            card.innerHTML = entry;
+            table.appendChild(card);
         })
     } else {
         document.getElementById("dacpresentations").innerHTML = "";
@@ -166,14 +168,16 @@ function createRecommendsTable(filtered) {
         // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(recommend => {
-            let row = document.createElement("p");
-            let title = document.createElement("p");
+            let card = document.createElement("p");
 
-            row.innerHTML = `<div class="item1"><p>${recommend.conf}<br>${recommend.year}</p></div>`;
-            title.innerHTML = `<td><a href="${rootUrl}${recommend.url}">${recommend.title}</a></td>`;
+            let note = `${recommend.conf}<br>${recommend.year}`;
+            let title = `<a href="${rootUrl}${recommend.url}">${recommend.title}</a>`;
 
-            row.appendChild(title);
-            table.appendChild(row);
+            let entry = `${note}<br>${title}`;
+            // console.log(entry);
+            
+            card.innerHTML = entry;
+            table.appendChild(card);
         })
     } else {
         document.getElementById("recommends").innerHTML = "";
@@ -198,24 +202,26 @@ function createOthersTable(filtered) {
         // console.log(filtered);
         // Now append rows and data to the table
         filtered.forEach(xtra => {
-            let row = document.createElement("p");
-            let title = document.createElement("p");
-            let award = document.createElement("p");
+            let card = document.createElement("p");
 
-            row.innerHTML = `<div class="item1"><p>${xtra.conf}<br>${xtra.year}</p></div>`;
-            title.innerHTML = `<p>${xtra.title}</p>`;
+            let note = `${xtra.conf}<br>${xtra.year}`;
+
+            let title = `${xtra.title}`;
+            let award;
             switch (xtra.awardtype) {
                 case "CAEsig":
-                    award.innerHTML = `<div class=itemsig><p>Voted Best Paper<br>${xtra.award} Place - CAE SIG</p></div>`;
+                    award = `<div class=itemsig>Voted Best Paper<br>${xtra.award} Place - CAE SIG</div>`;
                     break;
                 default:
-                    award.innerHTML = `<p></p>`;
+                    award = "";
                     break;
             }
 
-            row.appendChild(title);
-            row.appendChild(award);
-            table.appendChild(row);
+            let entry = `${note}<br>${title}<br>${award}`;
+            // console.log(entry);
+            
+            card.innerHTML = entry;
+            table.appendChild(card);
         })
     } else {
         document.getElementById("nonpublished").innerHTML = "";
