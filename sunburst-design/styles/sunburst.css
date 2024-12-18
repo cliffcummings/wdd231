@@ -359,15 +359,28 @@ ul {
     color: var(--back_color1);
 }
 
+.g1 p {
+    grid-column: 1 / 2;
+}
+.g2 p {
+    grid-column: 2 / 3;
+}
+.g3 p {
+    grid-column: 3 / 4;
+}
+.g4 p {
+    grid-column: 4 / 5;
+}
+
 .notes-container, .papers-container, .rec-container, .others-container, .dac-container {
     display: grid;
-    border-style: dashed;
-    border-width: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--back_color2);
 }
 
 .notes-container {
     grid-template-columns: auto auto auto;
-    border-color: var(--wild_red);
 }
 .notes-container h2 {
     grid-column: 1 / 4;
@@ -375,7 +388,6 @@ ul {
 
 .papers-container {
     grid-template-columns: auto auto auto auto;
-    border-color: blue;
 }
 .papers-container h2 {
     grid-column: 1 / 4;
@@ -383,7 +395,6 @@ ul {
 
 .dac-container {
     grid-template-columns: auto auto;
-    border-color: yellow;
 }
 .dac-container h2 {
     grid-column: 1 / 3;
@@ -392,7 +403,6 @@ ul {
 
 .rec-container {
     grid-template-columns: auto auto;
-    border-color: green;
 }
 .rec-container h2, p{
     grid-column: 1 / 3;
@@ -400,14 +410,14 @@ ul {
 
 .others-container {
     grid-template-columns: auto auto auto;
-    border-color: orange;
 }
 .others-container h2, p {
     grid-column: 1 / 4;
 }
 
 .item1 {
-    text-align: center;
+    text-align: left;
+    grid-column: 1 / 2;
 }
 
 .itempaper {
@@ -426,7 +436,8 @@ ul {
 }
 
 .itemrev {
-    text-align: center;
+    text-align: left;
+    grid-column: 3 / 4;
 }
 
 .item2 {
